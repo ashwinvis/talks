@@ -1,0 +1,9 @@
+syntax: glob
+
+*.pyd*
+*.pyc
+*~
+*tmp
+
+\#*\#
+ipynb/.ipynb_checkpoints/*
