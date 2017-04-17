@@ -10,18 +10,19 @@ follows. On one end of the spectrum there is a plethora of in-house codes built
 on traditional programming languages, such as C, C++ and FORTRAN. On the other
 end are scientific codes built on top of commercial software.
 
-In-house source code implementations offer full access to the internal clockwork
-of the code and are quite efficient. On the flip side, such codes often use
-customized ASCII or binary I/O formats, lack comprehensive documentation and
-continuous testing. By design, these programming languages require more
-man-hours for development process of a new feature, unless relied upon an
-external library such as BLAS, Boost and NAG to name a few. Hence, such codes
-have a larger user base than developers and discourage collaboration. To quote
-from Haskell wiki, "We should continue to move to higher levels of abstraction,
-just like we've done before. We should trade application speed for increased
-productivity, stability and maintainability. Programmer time is almost always
-more expensive than CPU time. We aren't writing applications in assembler
-anymore for the same reason we shouldn't be writing applications in C anymore."
+In-house source code implementations offer full access to the internal
+clockwork of the code and are quite efficient. On the flip side, such codes
+often use customized ASCII or binary I/O formats, lack comprehensive
+documentation and continuous testing. By design, these programming languages
+require more man-hours for development process of a new feature, unless relied
+upon an external library such as BLAS, Boost and NAG to name a few. Hence, such
+codes have a larger user base than developers and discourage collaboration. To
+quote from Haskell wiki, "We should continue to move to higher levels of
+abstraction, just like we've done before. We should trade application speed for
+increased productivity, stability and maintainability. Programmer time is
+almost always more expensive than CPU time. We aren't writing applications in
+assembler anymore for the same reason we shouldn't be writing applications in C
+anymore."
 
 Commercial software based codes attract users and developers alike due to out
 of the box implementations of many scientific tools and functions. This
