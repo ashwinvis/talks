@@ -29,8 +29,8 @@ help:
 	@echo "$$STR_HELP"
 
 notebook:
-	jupyter-notebook
+	cd ipynb && jupyter-notebook
 
 # --ServePostProcessor.ip='127.0.0.2'
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
-	jupyter-nbconvert $< --to slides --post serve
+	cd ipynb && jupyter-nbconvert $(notdir $<) --to slides --post serve

@@ -7,3 +7,5 @@ syntax: glob
 
 \#*\#
 ipynb/.ipynb_checkpoints/*
+
+ipynb/*.slides.html
