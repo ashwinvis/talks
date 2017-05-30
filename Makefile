@@ -29,7 +29,7 @@ help:
 	@echo "$$STR_HELP"
 
 notebook:
-	cd ipynb && jupyter-notebook
+	cd ipynb && python $(shell which jupyter-notebook)
 
 # --ServePostProcessor.ip='127.0.0.2'
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
