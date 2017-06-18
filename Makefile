@@ -34,3 +34,6 @@ notebook:
 # --ServePostProcessor.ip='127.0.0.2'
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
 	cd ipynb && jupyter-nbconvert $(notdir $<) --to slides --post serve
+
+index: ipynb/index.ipynb
+	jupyter-nbconvert ipynb/index.ipynb --to html --output-dir ${PWD}
