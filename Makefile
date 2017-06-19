@@ -37,3 +37,7 @@ $(IPYNBPRES): ipynb%: ipynb%.ipynb
 
 index: ipynb/index.ipynb
 	jupyter-nbconvert ipynb/index.ipynb --to html --output-dir ${PWD}
+
+# Make slides as static HTML files
+phd_summer_seminar:
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
