@@ -11865,7 +11865,7 @@ a.anchor-link {
 <p>Linné FLOW Centre, KTH Mechanics</p>
 <p>Supervisors: Erik Lindborg, Pierre Augier</p>
 <div align="middle">
-<img src="./fig/logo_KTH.png"  style="width: 10%"> </tb>
+<img src="./fig/logo_KTH.png"  style="width: 10%"> 
 <img src="./fig/logo_FLOW.png"  style="width: 15%"> 
 </div>
 </div>
@@ -11989,7 +11989,7 @@ anymore. - <strong>From Haskell wiki</strong></em></p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> <span class="n">v</span> <span class="o">=</span> <span class="o">.</span><span class="mo">01</span><span class="p">;</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="o">.</span><span class="mo">03</span>
+<div class=" highlight hl-ipython3"><pre><span></span> <span class="n">v</span> <span class="o">=</span> <span class="o">.</span><span class="mi">01</span><span class="p">;</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="o">.</span><span class="mi">03</span>
  <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">f</span> <span class="o">*</span> <span class="n">t</span><span class="p">);</span>                             <span class="o">%</span><span class="k">original</span> signal
  <span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>                <span class="o">%</span><span class="k">noise</span>
  <span class="n">Xw</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">;</span>                                      <span class="o">%</span><span class="k">signal</span> plus noise (filter input)
@@ -12019,9 +12019,9 @@ anymore. - <strong>From Haskell wiki</strong></em></p>
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython3"><pre><span></span> <span class="kn">from</span> <span class="nn">pylab</span> <span class="k">import</span> <span class="o">*</span>
 
- <span class="n">v</span> <span class="o">=</span> <span class="o">.</span><span class="mo">01</span><span class="p">;</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mo">03</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span><span class="n">fs</span><span class="p">)</span>
+ <span class="n">v</span> <span class="o">=</span> <span class="o">.</span><span class="mi">01</span><span class="p">;</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">fs</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">03</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span><span class="n">fs</span><span class="p">)</span>
  <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">f</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>                             <span class="c1"># original signal </span>
  <span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">random</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>                    <span class="c1"># noise</span>
  <span class="n">Xw</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span>                                      <span class="c1"># signal plus noise (filter input)</span>
@@ -12326,6 +12326,12 @@ AABJRU5ErkJggg==
 
 </div>
 </div>
+</div><div align="middle">
+<img src="./fig/dp_pierre.jpg"  style="width: 15%"/> &nbsp; &nbsp;
+<img src="./fig/dp_cyrille.jpg"  style="width: 10%"/> &nbsp; &nbsp;
+<img src="./fig/dp_antoine.jpg"  style="width: 15%"/> &nbsp; &nbsp;
+<img src="./fig/dp_ashwin.jpg"  style="width: 10%"/> &nbsp; &nbsp;
+<img src="./fig/dp_julien.png"  style="width: 20%"/> 
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12360,7 +12366,7 @@ AABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">capture</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">capture</span>
 import fluidsim as fls
 
 sim = fls.load_state_phys_file(&#39;/scratch/avmo/13KTH/toy_model_potential/SW1Lexmod_noise_c=12_Bu=1.0_L=50.x50._1920x1920_2017-05-13_05-03-26/&#39;)
@@ -12376,7 +12382,7 @@ sim = fls.load_state_phys_file(&#39;/scratch/avmo/13KTH/toy_model_potential/SW1L
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">capture</span> --no-display
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">capture</span> --no-display
 sim.output.spectra.plot2d(tmin=100, delta_t=0, coef_compensate=0.)
 </pre></div>
 
@@ -12944,7 +12950,7 @@ KN83b6XQfAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sim</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">phys_fields</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">display</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">phys_fields</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">display</span>
 <span class="n">sim</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">physkey_field</span><span class="o">=</span><span class="n">elds</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">key_field</span><span class="o">=</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
 </pre></div>
 
