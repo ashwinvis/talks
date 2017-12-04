@@ -31,6 +31,9 @@ help:
 notebook:
 	cd ipynb && python $(shell which jupyter-notebook)
 
+list:
+	@echo $(IPYNBPRES)
+
 # --ServePostProcessor.ip='127.0.0.2'
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
 	cd ipynb && jupyter-nbconvert $(notdir $<) --to slides --post serve
@@ -40,4 +43,10 @@ index: ipynb/index.ipynb
 
 # Make slides as static HTML files
 phd_summer_seminar:
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
+
+serve_agu_fallmeeting2017:
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
+
+agu_fallmeeting2017:
 	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
