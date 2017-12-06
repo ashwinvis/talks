@@ -45,8 +45,6 @@ index: ipynb/index.ipynb
 phd_summer_seminar:
 	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
 
-serve_agu_fallmeeting2017:
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
-
 agu_fallmeeting2017:
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js --config=ipynb/$@_config.py
+	cp -f ipynb/$@.css talks/custom.css

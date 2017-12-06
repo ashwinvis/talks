@@ -4,8 +4,13 @@ syntax: glob
 *.pyc
 *~
 *tmp
+*.tar.gz
 
 \#*\#
 ipynb/.ipynb_checkpoints/*
 
 ipynb/*.slides.html
+
+pdf/
+talks/fig/*pdf
+talks/fig/*tif
