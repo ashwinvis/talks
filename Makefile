@@ -48,3 +48,6 @@ phd_summer_seminar:
 agu_fallmeeting2017:
 	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js --config=ipynb/$@_config.py
 	cp -f ipynb/$@.css talks/custom.css
+	sed -i -e 's/https:\/\/cdnjs\.cloudflare\.com\/ajax\/\libs\/mathjax\/2.7.1/..\/js/' talks/$@.slides.html
+        #  -e 's/\/\/netdna\.bootstrapcdn\.com/CDN/' 
+        #   -e 's/mathjax\.tpl/mathjax_local.tpl/'
