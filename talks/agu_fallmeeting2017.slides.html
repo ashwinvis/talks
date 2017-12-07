@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="../js/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11937,7 +11937,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li><p><strong>Augier, P., Mohanan A.V. &amp; Lindborg, E.</strong> <em>Wave energy cascade in forced-dissipative one-layer shallow-water flows.</em> <strong>J. Fluid Mech. (submitted)</strong>.</p>
+<li><p><strong>Augier, P., Mohanan A.V. &amp; Lindborg, E.</strong> <em>Wave energy cascade in forced-dissipative one-layer shallow-water flows.</em> <strong>J. Fluid Mech. (to be submitted)</strong>.</p>
 </li>
 <li><p><strong>Lindborg, E. &amp; Mohanan, A. V.</strong> <em>A two-dimensional toy model for geophysical turbulence.</em> <strong>Phys. Fluids (2017)</strong>.</p>
 </li>
@@ -11956,7 +11956,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.1.-Atmospheric-energy-spectra-from-aircraft-data:-Nastrom-and-Gage-(1985)">1.1. Atmospheric energy spectra from aircraft data: Nastrom and Gage (1985)<a class="anchor-link" href="#1.1.-Atmospheric-energy-spectra-from-aircraft-data:-Nastrom-and-Gage-(1985)">&#182;</a></h4><div  align="center">
 <img src="./fig/agu_nastrom.png" alt="Nastrom and Gage" style="width: 50%;"/>
 </div><ul>
-<li>Synoptic scale spectra ($\lambda &gt; 1000$ km) ~  $k^{3}$</li>
+<li>Synoptic scale spectra ($\lambda &gt; 1000$ km) ~  $k^{-3}$</li>
 <li>Mesoscale spectra ($\lambda = 1$ to $500$ km) ~ $k^{-5/3}$</li>
 </ul>
 
@@ -12118,19 +12118,32 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 <h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.2.--A-toy-model">2.2.  A toy model<a class="anchor-link" href="#2.2.--A-toy-model">&#182;</a></h4><p><strong>(Lindborg and Mohanan 2017)</strong>: Two simple modifications</p>
 <ol>
 <li>Replace RHS of the scalar equation:
-<br/>
-<div align="center">
+<br/><div align="center">
 $ -(1+\eta) \nabla \cdot  {\bf u} $&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp; &nbsp; &nbsp; &nbsp; $ -\nabla \cdot {\bf u} $
-</div>
-<br/><br/></li>
+</div></li>
 <li>Replace advective operator:
 <br/>
 <div align="center">
 ${\bf u} \cdot \nabla$&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp; &nbsp; &nbsp; &nbsp; ${\bf u_r} \cdot \nabla$
 </div>
-<br/>
-$\bf{u}_r$ = rotational velocity</li>
+<br/></li>
 </ol>
+<p>where,</p>
+<p><div align="center">
+$
+{\bf u} = \bf{u}_r + \bf{u}_d
+$
+</div>
+<br/></p>
+<ul>
+<li>$ {\bf u}_r  = -\nabla \times ( {\bf e_z} \Psi)$ is the rotational component</li>
+<li>$\bf {u}_d = \nabla \chi$ is the divergent component</li>
+</ul>
+<p>and,</p>
+<ul>
+<li>$\Psi$ is the stream function</li>
+<li>$\chi$ is the velocity potential</li>
+</ul>
 
 </div>
 </div>
