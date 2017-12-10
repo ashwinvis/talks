@@ -55,8 +55,8 @@ index: ipynb/index.ipynb
 
 # Make slides as static HTML files
 phd_summer_seminar:
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
 
 agu_fallmeeting2017: localize
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --reveal-prefix=../reveal.js --config=ipynb/$@_config.py
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
 	cp -f ipynb/$@.css talks/custom.css

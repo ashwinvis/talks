@@ -11,12 +11,12 @@
 
 <title>phd_summer_seminar slides</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="../js/require.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="../reveal.js/css/reveal.css">
-<link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="../js/reveal.js-3.6.0/css/reveal.css">
+<link rel="stylesheet" href="../js/reveal.js-3.6.0/css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,19 +24,19 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = '../reveal.js/css/print/pdf.css';
+        link.href = '../js/reveal.js-3.6.0/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="../reveal.js/lib/js/html5shiv.js"></script>
+<script src="../js/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../js/MathJax-2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="../js/font-awesome-4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
     /*!
@@ -11776,7 +11776,6 @@ ul.typeahead-list > li > a {
 /* Overrides of notebook CSS for static HTML export */
 .reveal {
   font-size: 160%;
-  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -11806,6 +11805,41 @@ ul.typeahead-list > li > a {
 }
 .reveal .progress {
   position: static;
+}
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #727272;
+}
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-left.enabled.enabled:hover {
+  border-right-color: #dfdfdf;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #727272;
+}
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-right.enabled.enabled:hover {
+  border-left-color: #dfdfdf;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #727272;
+}
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-up.enabled.enabled:hover {
+  border-bottom-color: #dfdfdf;
+}
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #727272;
+}
+.reveal .controls .navigate-down.enabled:hover,
+.reveal .controls .navigate-down.enabled.enabled:hover {
+  border-top-color: #dfdfdf;
+}
+.reveal .progress span {
+  background: #727272;
 }
 div.input_area {
   padding: 0.06em;
@@ -11840,6 +11874,19 @@ a.anchor-link {
 .rendered_html p {
   text-align: inherit;
 }
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar *
+{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #727272 !important;
+}
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -11854,8 +11901,7 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11871,8 +11917,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11898,8 +11943,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11915,8 +11959,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11936,8 +11979,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11959,8 +12001,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11975,8 +12016,7 @@ anymore. - <strong>From Haskell wiki</strong></em></p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12005,8 +12045,7 @@ anymore. - <strong>From Haskell wiki</strong></em></p>
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12040,7 +12079,9 @@ anymore. - <strong>From Haskell wiki</strong></em></p>
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -12287,8 +12328,7 @@ AABJRU5ErkJggg==
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12308,8 +12348,7 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12333,8 +12372,7 @@ AABJRU5ErkJggg==
 <img src="./fig/dp_ashwin.jpg"  style="width: 10%"/> &nbsp; &nbsp;
 <img src="./fig/dp_julien.png"  style="width: 20%"/> 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12349,8 +12387,7 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12395,7 +12432,9 @@ sim.output.spectra.plot2d(tmin=100, delta_t=0, coef_compensate=0.)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -12936,8 +12975,7 @@ KN83b6XQfAAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12963,7 +13001,9 @@ KN83b6XQfAAAAABJRU5ErkJggg==
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -15339,13 +15379,12 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="fluidlab:-control-of-experiments-in-fluid-mechanics"><a href="https://bitbucket.org/fluiddyn/fluidlab">fluidlab</a>: control of experiments in fluid mechanics<a class="anchor-link" href="#fluidlab:-control-of-experiments-in-fluid-mechanics">&#182;</a></h2><p>(Pierre Augier, LEGI &amp; Julien Salors, ENS Lyon)</p>
-<h3 id="Physical-experiments-can-be-seen-as-the-interaction-of-autonomous-physical-objects">Physical experiments can be seen as the interaction of autonomous physical objects<a class="anchor-link" href="#Physical-experiments-can-be-seen-as-the-interaction-of-autonomous-physical-objects">&#182;</a></h3><ul>
+<h3 id="&#160;Physical-experiments-can-be-seen-as-the-interaction-of-autonomous-physical-objects">&#160;Physical experiments can be seen as the interaction of autonomous physical objects<a class="anchor-link" href="#&#160;Physical-experiments-can-be-seen-as-the-interaction-of-autonomous-physical-objects">&#182;</a></h3><ul>
 <li>Object-oriented programming</li>
 <li>Very easy to write instrument drivers</li>
 <li>Automatic documentation for the instrument drivers</li>
@@ -15364,8 +15403,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15376,8 +15414,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15388,8 +15425,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15410,8 +15446,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15441,8 +15476,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15459,8 +15493,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15469,8 +15502,7 @@ gx7NGGpoaGhoDHr+P0DhTjpXiu68AAAAAElFTkSuQmCC
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15501,8 +15533,8 @@ require(
       waitSeconds: 15
     },
     [
-      "../reveal.js/lib/js/head.min.js",
-      "../reveal.js/js/reveal.js"
+      "../js/reveal.js-3.6.0/lib/js/head.min.js",
+      "../js/reveal.js-3.6.0/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -15513,14 +15545,13 @@ require(
             progress: true,
             history: true,
 
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+            transition: "fade",
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "../reveal.js/lib/js/classList.js",
+                { src: "../js/reveal.js-3.6.0/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "../reveal.js/plugin/notes/notes.js",
+                { src: "../js/reveal.js-3.6.0/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
@@ -15534,13 +15565,25 @@ require(
 
         Reveal.addEventListener('slidechanged', update);
 
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
+        function setScrollingSlide() {
+            var scroll = false
+            if (scroll === true) {
+              var h = $('.reveal').height() * 0.95;
+              $('section.present').find('section')
+                .filter(function() {
+                  return $(this).height() > h;
+                })
+                .css('height', 'calc(95vh)')
+                .css('overflow-y', 'scroll')
+                .css('margin-top', '20px');
+            }
+        }
 
-        Reveal.addEventListener('slidechanged', update_scroll);
+        // check and set the scrolling slide every time the slide change
+        Reveal.addEventListener('slidechanged', setScrollingSlide);
 
     }
+
 );
 </script>
 

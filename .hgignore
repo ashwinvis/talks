@@ -11,7 +11,7 @@ ipynb/.ipynb_checkpoints/*
 
 ipynb/*.slides.html
 
-js/*/
+js/*.tpl
 pdf/
 
 talks/fig/*pdf
