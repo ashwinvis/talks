@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../js/MathJax-2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="../css/font-awesome.css">
+<link rel="stylesheet" href="../js/font-awesome-4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
     /*!
@@ -11948,7 +11948,20 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 </div><div>
 <img src="./fig/agu_screen_scilight.png" alt="Drawing" style="width: 60%; display: block; margin: auto;"/>
-</div></div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Honour of being selected from several AIP publications once a week. </li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11962,14 +11975,6 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.1.-Possible-explanations-for-the-mesoscale-energy--$k^{-5/3}$-spectra">1.1. Possible explanations for the mesoscale energy  $k^{-5/3}$ spectra<a class="anchor-link" href="#1.1.-Possible-explanations-for-the-mesoscale-energy--$k^{-5/3}$-spectra">&#182;</a></h4>
-</div>
-</div>
 </div><aside class="notes">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -11977,17 +11982,23 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>R.H. Kraichnan (1967)</strong>:<ul>
-<li>Inverse energy cascade: $E(k) \sim k^{-5/3}$ </li>
-<li>Forward enstrophy cascade: $E(k) \sim k^{-3}$</li>
-</ul>
-</li>
+<li>Accumulated from aircraft measurements in the Stratosphere(?) over several years</li>
+<li>Planetery scale and mesoscale</li>
+<li>Why does this happen? There are several answers...</li>
 </ul>
 
 </div>
 </div>
 </div>
-</aside><div class="fragment">
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.1.-Possible-explanations-for-the-mesoscale-energy--$k^{-5/3}$-spectra">1.1. Possible explanations for the mesoscale energy  $k^{-5/3}$ spectra<a class="anchor-link" href="#1.1.-Possible-explanations-for-the-mesoscale-energy--$k^{-5/3}$-spectra">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11995,7 +12006,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <ul>
 <li><p><strong>Gage (1979) &amp; Lilly (1983)</strong>: <em>inverse energy cascade</em> as in <strong>Kraichnan (1967)</strong></p>
 </li>
-<li><p><strong>Dewan (1979)</strong>:<em>downscale cascade</em> as in <strong>Kolmogorov (1941)</strong></p>
+<li><p><strong>Dewan (1979)</strong>:<em>downscale energy cascade</em> as in <strong>Kolmogorov (1941)</strong></p>
 </li>
 </ul>
 
@@ -12006,7 +12017,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h6 id="1.1.1-Theoretical-predictions">1.1.1 Theoretical predictions<a class="anchor-link" href="#1.1.1-Theoretical-predictions">&#182;</a></h6><ul>
+<h6 id="Theoretical-predictions">Theoretical predictions<a class="anchor-link" href="#Theoretical-predictions">&#182;</a></h6><ul>
 <li><strong>Lindborg (2006)</strong> and <strong>Waite &amp; Bartello (2004)</strong>: Stratified turbulence result in thin elongated structures. Vertical length scale $ l_v &lt; l_b = u/N \approx 1 km$ </li>
 </ul>
 
@@ -12032,7 +12043,40 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p><strong>R.H. Kraichnan (1967)</strong>:</p>
+<ul>
+<li>Inverse energy cascade: $E(k) \sim k^{-5/3}$ </li>
+<li>Forward enstrophy cascade: $E(k) \sim k^{-3}$</li>
+</ul>
+</li>
+<li><p>Emerging consensus that it could be explained by downscale or forward energy cascade.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>That raises the question is there is a minimum <strong>Vertical resolution?</strong> to get the mesoscale spectra?</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12118,32 +12162,28 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 <h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.2.--A-toy-model">2.2.  A toy model<a class="anchor-link" href="#2.2.--A-toy-model">&#182;</a></h4><p><strong>(Lindborg and Mohanan 2017)</strong>: Two simple modifications</p>
 <ol>
 <li>Replace RHS of the scalar equation:
-<br/><div align="center">
+<br/>
+<div align="center">
 $ -(1+\eta) \nabla \cdot  {\bf u} $&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp; &nbsp; &nbsp; &nbsp; $ -\nabla \cdot {\bf u} $
-</div></li>
+</div>
+<br/></li>
 <li>Replace advective operator:
 <br/>
 <div align="center">
-${\bf u} \cdot \nabla$&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp; &nbsp; &nbsp; &nbsp; ${\bf u_r} \cdot \nabla$
+${\bf u} \cdot \nabla$&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp; &nbsp; &nbsp; &nbsp; ${\bf u_r} \cdot \nabla$
 </div>
 <br/></li>
 </ol>
-<p>where,</p>
+<p><strong>Helmholtz decompostion:</strong></p>
 <p><div align="center">
-$
-{\bf u} = \bf{u}_r + \bf{u}_d
-$
+${\bf u} = \bf{u}_r + \bf{u}_d$
 </div>
 <br/></p>
 <ul>
 <li>$ {\bf u}_r  = -\nabla \times ( {\bf e_z} \Psi)$ is the rotational component</li>
 <li>$\bf {u}_d = \nabla \chi$ is the divergent component</li>
 </ul>
-<p>and,</p>
-<ul>
-<li>$\Psi$ is the stream function</li>
-<li>$\chi$ is the velocity potential</li>
-</ul>
+<p>with $\Psi$ and $\chi$ being the <strong>stream function</strong> and the <strong>velocity potential</strong> respectively.</p>
 
 </div>
 </div>
@@ -12152,8 +12192,9 @@ $
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.3.--The-toy-model-equations">2.3.  The toy model equations<a class="anchor-link" href="#2.3.--The-toy-model-equations">&#182;</a></h4><p>$$\frac{\partial {\bf u}} {\partial t} + {\bf u}_r\cdot \nabla {\bf u} + f {\bf e}_z\times {\bf u} = -c \nabla \theta + (-1)^{p+1} \nu_p \nabla^{2p} {\bf u}$$
-$$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nabla \cdot {\bf u} + (-1)^{p+1} \nu_p \nabla^{2p} {\theta}$$</p>
+<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.3.--The-toy-model-equations">2.3.  The toy model equations<a class="anchor-link" href="#2.3.--The-toy-model-equations">&#182;</a></h4><p>$$\frac{\partial {\bf u}} {\partial t} + {\bf u}_r\cdot \nabla {\bf u} + f {\bf e}_z\times {\bf u} = -c \nabla \theta $$
+$$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nabla \cdot {\bf u} $$</p>
+<p>where, $\theta = c\eta$</p>
 
 </div>
 </div>
@@ -12246,7 +12287,7 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 <h2 id="4.-Outlook">4. Outlook<a class="anchor-link" href="#4.-Outlook">&#182;</a></h2><ol>
 <li>Toy model simulations in <strong>beta plane</strong></li>
 <li>Large simulation of the toy model over a <strong>sphere</strong></li>
-<li>Study of <strong>cylonic/anticyclonic assymetry</strong> using the toy model</li>
+<li>Study of <strong>cyclonic/anticyclonic assymetry</strong> using the toy model</li>
 <li>Design of a <strong>laboratory experiment</strong> which can behave similar to toy-model equations</li>
 </ol>
 
@@ -12257,8 +12298,18 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><br/><br/><br/><br/></p>
-<div align="center"><h1>Thank you for your attention!</h1></div>
+<p><br/><br/><br/></p>
+<div align="center"><h1>Thank you for your attention!</h1></div><p><strong>About me</strong></p>
+<ul>
+<li><a href="https://kth.se/profile/avmo">kth.se/profile/avmo</a></li>
+</ul>
+<p><br/></p>
+<p><strong>Open source</strong>:</p>
+<ul>
+<li><div class="fa fa-bitbucket" aria-hidden="true"></div> <a href="https://bitbucket.org/fluiddyn">bitbucket.org/fluiddyn</a></li>
+<li><div class="fa fa-github" aria-hidden="true"></div> <a href="https://github.com/fluiddyn">github.com/fluiddyn</a></li>
+</ul>
+
 </div>
 </div>
 </div></section></section>
