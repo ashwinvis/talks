@@ -60,3 +60,7 @@ phd_summer_seminar:
 agu_fallmeeting2017: localize
 	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
 	cp -f ipynb/$@.css talks/custom.css
+
+agu_fallmeeting2017.zip: talks/agu_fallmeeting2017.slides.html
+	7z a $@ talks/fig/agu_* talks/fig/logo_* $< talks/custom.css js
+

@@ -11937,12 +11937,13 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
+<li><strong>Mohanan, A. V., Bonamy C. &amp; Augier, P.</strong> <em>FluidSim: modular, object-oriented Python package for CFD simulations</em> <strong>J. Open Research Software (to be submitted)</strong>.</li>
 <li><p><strong>Augier, P., Mohanan A.V. &amp; Lindborg, E.</strong> <em>Wave energy cascade in forced-dissipative one-layer shallow-water flows.</em> <strong>J. Fluid Mech. (to be submitted)</strong>.</p>
 </li>
 <li><p><strong>Lindborg, E. &amp; Mohanan, A. V.</strong> <em>A two-dimensional toy model for geophysical turbulence.</em> <strong>Phys. Fluids (2017)</strong>.</p>
 </li>
 </ol>
-<p>Selected as featured research by AIP (Nov 22, 2017)</p>
+<p>Article [3] selected as featured research by AIP (Nov 22, 2017)</p>
 
 </div>
 </div>
@@ -11955,7 +11956,8 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Honour of being selected from several AIP publications once a week. </li>
+<li>Here, I have listed the list of articles related to this talk</li>
+<li>Pleased to annouce that - distinction of being selected from several AIP publications once a week. </li>
 </ul>
 
 </div>
@@ -12050,26 +12052,11 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p><strong>R.H. Kraichnan (1967)</strong>:</p>
-<ul>
-<li>Inverse energy cascade: $E(k) \sim k^{-5/3}$ </li>
-<li>Forward enstrophy cascade: $E(k) \sim k^{-3}$</li>
-</ul>
-</li>
-<li><p>Emerging consensus that it could be explained by downscale or forward energy cascade.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</aside><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<li><strong>Kraichnan</strong>: Inverse ener. E(k) ~ k^{-5/3} &amp; Forward ens.: E(k)~k^{-3}</li>
+<li>Emerging consensus that it could be explained by downscale or forward energy cascade.</li>
+<li>Theories tried to estimate the type of vertical structures and quantify them.</li>
+<li>Lindborg and Waite &amp; Bartello in seperate studies attributed this to elongated structures (zig-zag) instability estimated to be bands of 1 km</li>
+<li>Callies et al. pointed out this could be because of gravity waves</li>
 <li>That raises the question is there is a minimum <strong>Vertical resolution?</strong> to get the mesoscale spectra?</li>
 </ul>
 
@@ -12081,7 +12068,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Results-from-GCM">1.3. Results from GCM<a class="anchor-link" href="#1.3.-Results-from-GCM">&#182;</a></h4>
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.2.-Results-from-General-Circulation-Models">1.2. Results from General Circulation Models<a class="anchor-link" href="#1.2.-Results-from-General-Circulation-Models">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12098,21 +12085,51 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div><div align="right">
 <img src="./fig/agu_afes.png" alt="Drawing" style="width: 45%;" /> &nbsp;
 <img src="./fig/agu_gcm_flux.png" alt="Drawing" style="width: 45%;"/>
-</div></section></section><section><section>
+</div><aside class="notes">
+
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.4.-Results-from-GCM">1.4. Results from GCM<a class="anchor-link" href="#1.4.-Results-from-GCM">&#182;</a></h4><h4 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h4><ul>
-<li><p>Minimum number of levels required to reproduce $k^{-5/3}$ spectra?</p>
-</li>
-<li><p>Single level model enough? <strong>1-layer Shallow-water equation?</strong></p>
-</li>
+<ul>
+<li>Fact: GCM able to reproduce mesoscale spectra with very few pressure levels</li>
+<li>l &lt; 3 ( planetary scales) APE is forced</li>
+<li>l = [8, 30] baroclinic instability: conversion from APE -&gt; KE. reflected also in green $C_{cum}$ curve</li>
+<li>l &gt; 50 reasonably flat energy flux -&gt; inertial range and some energy goes upscale</li>
+<li>l &lt; 10 inverse energy cascade: source of large scale circulations</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Results-from-GCM">1.3. Results from GCM<a class="anchor-link" href="#1.3.-Results-from-GCM">&#182;</a></h4><h4 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h4><p><br/></p>
+<ul>
+<li>Minimum number of levels required to reproduce $k^{-5/3}$ spectra?</li>
+<li>Single level model enough? <strong>1-layer Shallow-water equation?</strong></li>
+</ul>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>How many levels do we need in the vertical?</li>
+<li>Can we just use the shallow water equations?</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12133,7 +12150,24 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>For those who are unfamiliar, SWE solves for horizontal velocity vector $\bf{u}$ (momentum conservation) and non-dimensional surface displacement ${\eta}$ (mass conservation)</li>
+<li>Many good properties</li>
+<li>Not suitable for turbulence studies... why?</li>
+<li>Main reason: Shocks result in $k^{-2}$, not $k^{-5/3}$ spectra</li>
+<li>Secondly: inability to represent K.E. and Pot. Enstrophy quadratically</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12154,7 +12188,22 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Energies must be conserved in the quadratic form</li>
+<li>Potential enstrophy conservation</li>
+<li>No shocks!</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12170,10 +12219,18 @@ $ -(1+\eta) \nabla \cdot  {\bf u} $&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp
 <li>Replace advective operator:
 <br/>
 <div align="center">
-${\bf u} \cdot \nabla$&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp; &nbsp; &nbsp; &nbsp; ${\bf u_r} \cdot \nabla$
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ${\bf u} \cdot \nabla$&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  with &nbsp; &nbsp; &nbsp; &nbsp; ${\bf u_r} \cdot \nabla$ 
 </div>
 <br/></li>
 </ol>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Helmholtz decompostion:</strong></p>
 <p><div align="center">
 ${\bf u} = \bf{u}_r + \bf{u}_d$
@@ -12187,7 +12244,23 @@ ${\bf u} = \bf{u}_r + \bf{u}_d$
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Apply two modifications on the classical shallow water equations</p>
+<ul>
+<li>replace the right hand side of the scalar equation to make it linear. Reason: \eta &lt;&lt; 1 when Fr -&gt; 0</li>
+<li>in the advection term we use rotational velocity. Reason: large scale motions dominated by rotation</li>
+<li>use Helmholtz decomposition to calculate u_r</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12212,7 +12285,21 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Putting in the assumptions mentioned earlier, we get the toy-model</li>
+<li>Replaced \eta with a proportional \theta variable. Takes the form of potential temperature.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12227,7 +12314,7 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.2-Energy-spectra-and-spectral-energy-fluxes">3.2 Energy spectra and spectral energy fluxes<a class="anchor-link" href="#3.2-Energy-spectra-and-spectral-energy-fluxes">&#182;</a></h4><p>Toy model: forcing at $k_f = 6$</p>
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.2-Energy-spectra-and-spectral-energy-fluxes">3.2 Energy spectra and spectral energy fluxes<a class="anchor-link" href="#3.2-Energy-spectra-and-spectral-energy-fluxes">&#182;</a></h4><p>Toy model forced at $k_f = 6$</p>
 
 </div>
 </div>
@@ -12251,7 +12338,7 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.4-Energy-spectra">3.4 Energy spectra<a class="anchor-link" href="#3.4-Energy-spectra">&#182;</a></h4><p>Toy model: forcing at $k_f = 30$</p>
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.4-Energy-spectra">3.4 Energy spectra<a class="anchor-link" href="#3.4-Energy-spectra">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
 <p><img src="./fig/agu_run3_spectra.png" alt="spectra"></p>
 
 </div>
@@ -12284,7 +12371,8 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Outlook">4. Outlook<a class="anchor-link" href="#4.-Outlook">&#182;</a></h2><ol>
+<h2 id="4.-Outlook">4. Outlook<a class="anchor-link" href="#4.-Outlook">&#182;</a></h2><p><br/></p>
+<ol>
 <li>Toy model simulations in <strong>beta plane</strong></li>
 <li>Large simulation of the toy model over a <strong>sphere</strong></li>
 <li>Study of <strong>cyclonic/anticyclonic assymetry</strong> using the toy model</li>
