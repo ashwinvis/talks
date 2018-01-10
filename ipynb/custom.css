@@ -11,23 +11,37 @@
 */
 
 :root {
-  --color-1: #009D82 ;
-  --color-2: #00493d ;
-  --logo-2: url("img/logo_KTH.png") ; /* Not working, TODO */
-  --name : "AGU Fall Meeting 2017"; /*Not working, TODO*/
+  --color-1: #195EAB;
+  --color-2: #114177 ;
 }
 
-.body {
-    font-size: medium;
+footer {
+    height: 115px;
+    text-align: left;
+    background: #ccc;
 }
 
 body { /* Change the logo urls in the line after if needed */
-    /*background: url("fig/logo_KTH.png"), url("fig/logo_FLOW.png");*/
+    background: url("fig/logo_KTH.png");/* url("fig/logo_FLOW.png");*/
 /*, url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='40px' width='auto'><text x='10' y='20' fill='grey' font-size='30'> AGU </text></svg>");*/
-    background-size: 3%, 10%; /*95%;*/
-    background-position: 5% 98%, 95% 98%; /*100% 98%;*/
+    background-size: 5%, 10%; /*95%;*/
+    background-position: 5% 5%, 95% 98%; /*100% 98%;*/
     background-repeat: no-repeat, no-repeat; /*no-repeat;*/
 }
+
+ul.wrap { overflow:hidden;}
+ul.wrap li { float:center; border:1px solid #ccc; }
+ul.wrap li .fill {background:#fff; position:relative; }
+
+/*Absolute positioning*/
+ul.wrap li.abs .fill {}
+/* top and left offsets are half the respective dimensions of the element being positioned */
+ul.wrap li.abs .fill img { top:-50px; left:-50px; position:absolute; margin:50% 0 0 50%; }
+/*Line height*/
+ul.wrap li.lnh .fill { text-align:center; line-height:300px; }
+ul.wrap li.lnh .fill img { vertical-align:middle; }
+/*Display:table-cell*/
+ul.wrap li.tbc .fill { text-align:center; display:table-cell; vertical-align:middle; }
 
 .reveal .progress span {
   background: var(--color-1);
@@ -48,6 +62,15 @@ body { /* Change the logo urls in the line after if needed */
 
 .reveal a:hover img {
   border-color: var(--color-1);
+}
+
+/* Filled header */
+.reveal h2 {
+  width: 100%;
+  background: var(--color-1);
+  margin: 0 auto;
+  padding: 1% 1%; /*0.25em 0.625em;*/
+  color: #fff;
 }
 
 /*********************************************

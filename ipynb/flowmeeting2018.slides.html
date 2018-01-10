@@ -11919,8 +11919,8 @@ a.anchor-link {
 <div align="right">
 <font color="gray">
 <small>
-11 December 2017 (17:21 - 17:34 hrs), AGU Fall Meeting 2017 <br/>
-NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
+11 January 2017 (14:55 - 15:15 hrs), FLOW Meeting 2018 <br/>
+Skytteholm, Stockholm, Sweden
 </small>
 </font>
 </div><aside class="notes">
@@ -11998,7 +11998,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Picture in front of</strong> you is accumulated from <strong>aircraft measurements</strong> in the atmosphere over several years</li>
+<li><strong>Picture in front of</strong> you is the result of <strong>aircraft measurements</strong> in the atmosphere accumulated over several years</li>
 <li>Planetery scale and mesoscale</li>
 <li>Why does this happen? There are several answers...</li>
 </ul>
@@ -12022,7 +12022,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <ul>
 <li><p><strong>Gage (1979) &amp; Lilly (1983)</strong>: <em>inverse energy cascade</em> as in <strong>Kraichnan (1967)</strong></p>
 </li>
-<li><p><strong>Dewan (1979)</strong>:<em>downscale energy cascade</em> as in <strong>Kolmogorov (1941)</strong></p>
+<li><p><strong>Dewan (1979)</strong>:<em>forward energy cascade</em> as in <strong>Kolmogorov (1941)</strong></p>
 </li>
 </ul>
 
@@ -12033,7 +12033,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h6 id="Theoretical-predictions">Theoretical predictions<a class="anchor-link" href="#Theoretical-predictions">&#182;</a></h6><ul>
+<h6 id="Theoretical-predictions-for-turbulent-structures-involved">Theoretical predictions for turbulent structures involved<a class="anchor-link" href="#Theoretical-predictions-for-turbulent-structures-involved">&#182;</a></h6><ul>
 <li><strong>Lindborg (2006)</strong> and <strong>Waite &amp; Bartello (2004)</strong>: Stratified turbulence result in thin elongated structures. Vertical length scale $ l_v \sim u/N \approx 1 km$ </li>
 </ul>
 
@@ -12045,17 +12045,8 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Callies, Bühler and Ferrari (2016)</strong>: Inertia gravity waves, with frequency $\omega \approx f$. i.e. $l_v \approx$ few metres.</li>
+<li><strong>Callies, Bühler and Ferrari (2016)</strong>: Inertia gravity waves, with frequency $\omega \approx f$. i.e. $l_v \approx$ 100 metres.</li>
 </ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Vertical resolution?</strong></p>
 
 </div>
 </div>
@@ -12082,7 +12073,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Stratified-Turbulence">1.3. Stratified Turbulence<a class="anchor-link" href="#1.3.-Stratified-Turbulence">&#182;</a></h4>
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Quick-recap-of-turbulence-fundamentals">1.3. Quick recap of turbulence fundamentals<a class="anchor-link" href="#1.3.-Quick-recap-of-turbulence-fundamentals">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12091,11 +12082,22 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p><strong>Lindborg (2006)</strong>: Postulated scaling laws for non-rotating forced stratified flows</p>
+<li>Kinetic ($E_K$) and Available Potential Energy ($E_A$)</li>
+<li>Transfer terms and Spectral energy fluxes</li>
+</ul>
+
+</div>
+</div>
+</div><div align="center">
+<img src="./fig/flow_flux_schem.png" alt="Drawing" style="width: 60%;"/>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Length scale: $l_v \sim u/N; \frac{l_v}{l_h} \sim F_h$, the horizontal Froude number. Typically $F_h &lt;&lt; 1$ for strong stratification.</li>
-<li>Energy spectrum: $E(k_h) = C_1 \epsilon^{2/3}k_h^{-5/3}$</li>
-<li>Spectral energy flux: $\Pi(k_\rho) = -\sum\limits_{|\vec{k_h}| \leq k_\rho} T(\vec{k_h}, k_z)$</li>
+<li>Normal mode decomposition (for Bousinessq and shallow-water equations)<ul>
+<li>Velocities and the scalar can be decomposed as a sum of <strong>one vortex</strong> mode and <strong>two wave</strong> modes</li>
 </ul>
 </li>
 </ul>
@@ -12107,7 +12109,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Results-from-General-Circulation-Models">1.3. Results from General Circulation Models<a class="anchor-link" href="#1.3.-Results-from-General-Circulation-Models">&#182;</a></h4>
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Stratified-Turbulence">1.3. Stratified Turbulence<a class="anchor-link" href="#1.3.-Stratified-Turbulence">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12116,14 +12118,73 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Augier &amp; Lindborg (2013)</strong>: GCMs such as <strong>AFES</strong> and <strong>MPAS</strong> model can simulate mesoscale energy cascade with coarse vertical resolution: 24 levels!</li>
+<li><p><strong>Lindborg (2006)</strong>: Postulated scaling laws for non-rotating stratified turbulence</p>
+<ul>
+<li>Length scale:<ul>
+<li>$l_v \sim u/N$</li>
+<li>$\frac{l_v}{l_h} \sim F_h$, the horizontal Froude number. Typically $F_h &lt;&lt; 1$ for strong stratification.</li>
+</ul>
+</li>
+<li>Energy spectrum:<ul>
+<li>$E_K(k_h) = C_1 \epsilon_K^{2/3}k_h^{-5/3}$;</li>
+<li>$E_A(k_h) = C_2 \epsilon_P \epsilon_K^{-1/3}k_h^{-5/3}$</li>
+</ul>
+</li>
+<li>Forward energy cascade: $\Pi &gt; 0$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.3.-Stratified-Turbulence">1.3. Stratified Turbulence<a class="anchor-link" href="#1.3.-Stratified-Turbulence">&#182;</a></h4>
+</div>
+</div>
+</div><div align="right">
+<img src="./fig/flow_lind06_1.png" alt="Drawing" style="width: 45%;" /> &nbsp;
+<img src="./fig/flow_lind06_2.png" alt="Drawing" style="width: 40%;"/>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>3D Boussinesq equation simulations in <strong>Lindborg (2006)</strong> demonstrated that</p>
+<ul>
+<li>energy spectra scales as $k^{-5/3}$</li>
+<li>energy flux indicates a <strong>forward energy cascade</strong></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.4.-Results-from-General-Circulation-Models">1.4. Results from General Circulation Models<a class="anchor-link" href="#1.4.-Results-from-General-Circulation-Models">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Augier &amp; Lindborg (2013)</strong>: A GCM called <strong>AFES</strong> can simulate mesoscale energy cascade with coarse vertical resolution: 24 levels!</li>
+<li>Other GCMs (ECMWF) cannot!</li>
+<li>Energy spectra and fluxes computed from spherical harmonics . Spherical harmonic indices $l$ &amp; $m$ correspond to latitude and longitude angles.</li>
 </ul>
 
 </div>
 </div>
 </div><div align="right">
-<img src="./fig/agu_afes.png" alt="Drawing" style="width: 45%;" /> &nbsp;
-<img src="./fig/agu_gcm_flux.png" alt="Drawing" style="width: 45%;"/>
+<img src="./fig/agu_afes.png" alt="Drawing" style="width: 40%;" /> &nbsp;
+<img src="./fig/agu_gcm_flux.png" alt="Drawing" style="width: 40%;"/>
 </div><aside class="notes">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -12134,7 +12195,8 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 <li>Fact: <strong>GCM such as AFES</strong> able to <strong>reproduce mesoscale spectra</strong> with very few pressure levels</li>
 <li><strong>l &lt; 3</strong> ( planetary scales) APE is forced; l </li>
 <li><strong>l = [8, 30]</strong> baroclinic instability: conversion from APE -&gt; KE. reflected also in green $C_{cum}$ curve</li>
-<li><strong>l &gt; 50</strong> reasonably flat energy flux -&gt; inertial range and some energy goes upscale</li>
+<li><strong>l &gt; 50</strong> reasonably flat energy flux -&gt; inertial range and some 
+energy goes upscale</li>
 <li><strong>l &lt; 10</strong> inverse energy cascade: source of large scale circulations</li>
 </ul>
 
@@ -12146,10 +12208,22 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.4.-Results-from-GCM">1.4. Results from GCM<a class="anchor-link" href="#1.4.-Results-from-GCM">&#182;</a></h4><h4 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h4><p><br/></p>
+<h2 id="1.-Background">1. Background<a class="anchor-link" href="#1.-Background">&#182;</a></h2><h4 id="1.4.-Motivation-for-the-present-study">1.4. Motivation for the present study<a class="anchor-link" href="#1.4.-Motivation-for-the-present-study">&#182;</a></h4><h4 id="Questions-and-contradictions">Questions and contradictions<a class="anchor-link" href="#Questions-and-contradictions">&#182;</a></h4><ul>
+<li>Stratified turbulence predicts a fine vertical resolution to be needed for obtaining $k^{-5/3}$ spectra</li>
+<li>GCM simulations required only 24 pressure levels</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br/></p>
 <ul>
 <li>Minimum number of levels required to reproduce $k^{-5/3}$ spectra?</li>
-<li>Single level model enough? <strong>1-layer Shallow-water equation?</strong></li>
+<li>Is it possible with a single level model? <strong>1-layer Shallow-water equation?</strong></li>
 </ul>
 
 </div>
@@ -12168,7 +12242,7 @@ NG14A-07, New Orleans Ernest N. Morial Convention Center; 238-239
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12191,7 +12265,7 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Why-not-shallow-water-equations?">Why not shallow-water equations?<a class="anchor-link" href="#Why-not-shallow-water-equations?">&#182;</a></h5><ul>
 <li>Kinetic energy is not quadratic, but cubic: $E_K = (H + \eta) \frac{\mathbf{u}.\mathbf{u}}{2}$</li>
-<li>Potential enstrophy is not quadratic in general. But in QG limit with strong rotation: $ Q = \frac{f +\zeta }{1+\eta} \rightarrow q = \zeta - f\eta$</li>
+<li>Potential enstrophy is not quadratic in general.</li>
 <li>Tendency for waves to develop into shocks giving rise to $k ^ {-2}$ energy spectra</li>
 </ul>
 
@@ -12219,7 +12293,27 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.1-Desirable-properties-for-turbulence-studies">2.1 Desirable properties for turbulence studies<a class="anchor-link" href="#2.1-Desirable-properties-for-turbulence-studies">&#182;</a></h4>
+<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.1-Quasi-Geostrophy-(QG):-Charney-(1971)">2.1 Quasi-Geostrophy (QG): <strong>Charney (1971)</strong><a class="anchor-link" href="#2.1-Quasi-Geostrophy-(QG):-Charney-(1971)">&#182;</a></h4><ul>
+<li>In QG limit, potential vorticity can be approximated as $ Q = \frac{f +\zeta }{1+\eta} \rightarrow q = \zeta + \beta y - f_0\eta$. Thus QG potential enstrophy, $\Omega = \frac{1}{2} q^2$ is quadratic.</li>
+<li>Inverse energy cascade and forward enstrophy cascade: just like 2D turbulence in <strong>Kraichnan (1971)</strong>.</li>
+</ul>
+<p>Shallow water equation is often studied as QG equations:</p>
+<p>$$\frac{D}{Dt}\left(\nabla^2 \psi + \beta y - \frac{1}{L_d^2} \psi \right)= \frac{D}{Dt}\left(\zeta + \beta y - f_0 \eta \right)=0$$</p>
+<p>Important assumptions:</p>
+<ol>
+<li>Rossby number, $Ro &lt; 1 \implies$ strong rotation</li>
+<li>Burger number, $1 / Bu = L_d / L &lt; 1 \implies$ planetary scales</li>
+<li>Variations in coriolis term ($\beta$) is small $\implies$ mid-latitudes and above</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.3-Desirable-properties-for-turbulence-studies">2.3 Desirable properties for turbulence studies<a class="anchor-link" href="#2.3-Desirable-properties-for-turbulence-studies">&#182;</a></h4>
 </div>
 </div>
 </div><div class="fragment">
@@ -12228,8 +12322,8 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Kinetic energy (KE) and Available potential energy (APE) must be <strong>quadratic</strong> and <strong>conserved</strong></li>
-<li>Potential enstrophy conservation</li>
+<li>Kinetic energy (KE) and Available potential energy (APE) should be <strong>quadratic</strong> and <strong>conserved</strong></li>
+<li>Potential enstrophy conservation in the QG limit</li>
 <li>No shock formation</li>
 </ul>
 
@@ -12243,7 +12337,7 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Energies must be <strong>conserved</strong> in the <strong>quadratic</strong> form</li>
-<li><strong>Potential enstrophy</strong> conservation</li>
+<li><strong>Potential enstrophy</strong> conservation in the QG limit</li>
 <li><strong>No shocks</strong>!</li>
 </ul>
 
@@ -12255,7 +12349,7 @@ $$\frac{\partial \eta}{\partial t}+ {\bf u} \cdot \nabla \eta   = - (1+\eta) \na
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.2.--A-toy-model">2.2.  A toy model<a class="anchor-link" href="#2.2.--A-toy-model">&#182;</a></h4><p><strong>(Lindborg and Mohanan 2017)</strong>: Two simple modifications</p>
+<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.4.--A-toy-model">2.4.  A toy model<a class="anchor-link" href="#2.4.--A-toy-model">&#182;</a></h4><p><strong>(Lindborg and Mohanan 2017)</strong>: Two simple modifications</p>
 <ol>
 <li>Replace RHS of the scalar equation:
 <br/>
@@ -12276,7 +12370,7 @@ $ -(1+\eta) \nabla \cdot  {\bf u} $&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with &nbsp
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Helmholtz decompostion:</strong></p>
+<p><strong>Helmholtz decomposition:</strong></p>
 <p><div align="center">
 ${\bf u} = \bf{u}_r + \bf{u}_d$
 </div>
@@ -12310,7 +12404,7 @@ ${\bf u} = \bf{u}_r + \bf{u}_d$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.3.--The-toy-model-equations">2.3.  The toy model equations<a class="anchor-link" href="#2.3.--The-toy-model-equations">&#182;</a></h4><p>$$\frac{\partial {\bf u}} {\partial t} + {\bf u}_r\cdot \nabla {\bf u} + f {\bf e}_z\times {\bf u} = -c \nabla \theta $$
+<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.5.--The-toy-model-equations">2.5.  The toy model equations<a class="anchor-link" href="#2.5.--The-toy-model-equations">&#182;</a></h4><p>$$\frac{\partial {\bf u}} {\partial t} + {\bf u}_r\cdot \nabla {\bf u} + f {\bf e}_z\times {\bf u} = -c \nabla \theta $$
 $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nabla \cdot {\bf u} $$</p>
 <p>where, $\theta = c\eta$</p>
 
@@ -12380,8 +12474,8 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 </div>
 </div><div>
-<img src="./fig/agu_run1_spectra.png" alt="Drawing" style="width: 40%;"  align="right"> &nbsp;
-<img src="./fig/agu_run1_flux.png" alt="Drawing" style="width: 40%;" align="right"/>
+<img src="./fig/agu_run1_flux.png" alt="Drawing" style="width: 45%;" align="right"/> &nbsp;
+<img src="./fig/agu_run1_spectra.png" alt="Drawing" style="width: 45%;"  align="right"> 
 </div><aside class="notes">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -12402,7 +12496,29 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.3-Spectral-energy-fluxes">3.3 Spectral energy fluxes<a class="anchor-link" href="#3.3-Spectral-energy-fluxes">&#182;</a></h4><p>Toy-model forced at $k_f = 30$ compared to GCM results from <strong>Augier &amp; Lindborg(2013)</strong></p>
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.3-Energy-spectra">3.3 Energy spectra<a class="anchor-link" href="#3.3-Energy-spectra">&#182;</a></h4><p>Toy model forced at $k_f = 6$ using different forcing methods</p>
+
+</div>
+</div>
+</div><div>
+<img src="./fig/flow_run12_spectra.png" alt="Drawing" style="width: 80%;"  align="right"> &nbsp;
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.4-Spectral-energy-fluxes">3.4 Spectral energy fluxes<a class="anchor-link" href="#3.4-Spectral-energy-fluxes">&#182;</a></h4><p>Toy model forced at $k_f = 6$ using different forcing methods</p>
+
+</div>
+</div>
+</div><div>
+<img src="./fig/flow_run12_flux.png" alt="Drawing" style="width: 80%;"  align="right"> &nbsp;
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.5-Spectral-energy-fluxes">3.5 Spectral energy fluxes<a class="anchor-link" href="#3.5-Spectral-energy-fluxes">&#182;</a></h4><p>Toy-model forced at $k_f = 30$ compared to GCM results from <strong>Augier &amp; Lindborg(2013)</strong></p>
 
 </div>
 </div>
@@ -12430,7 +12546,7 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.4-Energy-spectra">3.4 Energy spectra<a class="anchor-link" href="#3.4-Energy-spectra">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.6-Energy-spectra">3.6 Energy spectra<a class="anchor-link" href="#3.6-Energy-spectra">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
 <p><img src="./fig/agu_run3_spectra.png" alt="spectra"></p>
 
 </div>
@@ -12455,7 +12571,7 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.5-Potential-vorticity-($q$)-and-wave-($a_+$)-fields">3.5 Potential vorticity ($q$) and wave ($a_+$) fields<a class="anchor-link" href="#3.5-Potential-vorticity-($q$)-and-wave-($a_+$)-fields">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.7-Potential-vorticity-($q$)-and-wave-($a_+$)-fields">3.7 Potential vorticity ($q$) and wave ($a_+$) fields<a class="anchor-link" href="#3.7-Potential-vorticity-($q$)-and-wave-($a_+$)-fields">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
 
 </div>
 </div>
@@ -12482,7 +12598,7 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.6-Potential-vorticity-($q$)-and-wave-($a_+$)-fields:-Anticyclone-formation">3.6 Potential vorticity ($q$) and wave ($a_+$) fields: Anticyclone formation<a class="anchor-link" href="#3.6-Potential-vorticity-($q$)-and-wave-($a_+$)-fields:-Anticyclone-formation">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
+<h2 id="3.-Results">3. Results<a class="anchor-link" href="#3.-Results">&#182;</a></h2><h4 id="3.8-Potential-vorticity-($q$)-and-wave-($a_+$)-fields:-Anticyclone-formation">3.8 Potential vorticity ($q$) and wave ($a_+$) fields: Anticyclone formation<a class="anchor-link" href="#3.8-Potential-vorticity-($q$)-and-wave-($a_+$)-fields:-Anticyclone-formation">&#182;</a></h4><p>Toy model forced at $k_f = 30$</p>
 <p><img src="./fig/agu_run3_anticyc.png" alt="Wave-vortex fields"></p>
 
 </div>
@@ -12511,7 +12627,6 @@ $$\frac{\partial \theta}{\partial t}+ {\bf u}_r \cdot \nabla \theta   = -  c\nab
 <li>Toy model simulations in <strong>beta plane</strong></li>
 <li>Large simulation of the toy model over a <strong>sphere</strong></li>
 <li>Study of <strong>cyclonic/anticyclonic assymetry</strong> using the toy model</li>
-<li>Design of a <strong>laboratory experiment</strong> which can behave similar to toy-model equations</li>
 </ol>
 
 </div>
