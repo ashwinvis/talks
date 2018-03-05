@@ -11,7 +11,7 @@ RPWD := $(shell pwd | sed -e 's,\/,\\\/,g')
 define STR_HELP
 This makefile can be used for
 
-àÎVCE!àÎVCZ!import_parentC!!help: print this help.
+help: print this help.
 
 notebook: run a jupyter-notebook.
 
@@ -32,6 +32,9 @@ help:
 
 notebook:
 	cd ipynb && python $(shell which jupyter-notebook)
+
+lab:
+	cd ipynb && python $(shell which jupyter-lab)
 
 list:
 	@echo $(IPYNBPRES)
@@ -69,5 +72,12 @@ flowmeeting2018:
 	cp -f ipynb/$@.css talks/custom.css
 
 flowmeeting2018.zip: talks/flowmeeting2018.slides.html
+	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
+
+misu_seminar2018:
+	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
+	cp -f ipynb/$@.css talks/custom.css
+
+misu_seminar2018.zip: talks/misu_seminar2018.slides.html
 	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
 
