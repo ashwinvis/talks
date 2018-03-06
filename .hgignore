@@ -7,7 +7,7 @@ syntax: glob
 *.tar.gz
 
 \#*\#
-ipynb/.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*
 
 ipynb/*.slides.html
 

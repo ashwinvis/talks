@@ -11937,9 +11937,9 @@ Stockholm University, Stockholm, Sweden
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Good evening all!</li>
-<li>I am here to talk about <strong>how to modify</strong> the shallow water equations for <strong>turbulence studies</strong></li>
-<li>This work has been a <strong>culmination of the efforts</strong> from Pierre, who is sitting right there, Erik, and myself Ashwin</li>
+<li>Good morning all! First off, let me thank MISU and esp. Jonas for arranging this talk</li>
+<li>I am here to talk about <strong>how we modified</strong> the shallow water equations, into a <strong>toy-model</strong> for turbulence studies.</li>
+<li>This work has been a <strong>culmination of the efforts</strong> from Erik, Pierre and myself Ashwin.</li>
 </ul>
 
 </div>
@@ -11956,20 +11956,12 @@ Stockholm University, Stockholm, Sweden
 <li><p><strong>Lindborg, E. &amp; Mohanan, A. V.</strong> <em>A two-dimensional toy model for geophysical turbulence.</em> <strong>Phys. Fluids (2017)</strong>.</p>
 </li>
 </ol>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Article [2] selected as featured research by AIP (Nov 22, 2017)</p>
+<p>Article [2] selected as <strong><em>featured research</em></strong> by AIP (Nov 22, 2017)</p>
 
 </div>
 </div>
 </div><div>
-<img src="./fig/agu_screen_scilight.png" alt="Drawing" style="width: 60%; display: block; margin: auto;"/>
+<img src="./fig/agu_screen_scilight.png" alt="Drawing" style="width: 50%; display: block; margin: auto;"/>
 </div><aside class="notes">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
@@ -11984,7 +11976,7 @@ Stockholm University, Stockholm, Sweden
 </div>
 </div>
 </div>
-</aside></div></section></section><section><section>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12089,20 +12081,8 @@ Stockholm University, Stockholm, Sweden
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Kinetic ($E_K$) and Available Potential Energy ($E_A$)</li>
-<li>Transfer terms and Spectral energy fluxes</li>
-</ul>
-
-</div>
-</div>
-</div><div align="center">
-<img src="./fig/flow_flux_schem.png" alt="Drawing" style="width: 60%;"/>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<li>Kinetic ($E_K$) and Available Potential <strong>Energy</strong>($E_A$)</li>
+<li>Cumulative sum of <strong>transfer terms</strong> $T(k_h)$ = <strong>Spectral energy fluxes</strong> $\Pi(k_h)$</li>
 <li>Normal mode decomposition (for Bousinessq and shallow-water equations)<ul>
 <li>Velocities and the scalar can be decomposed as a sum of <strong>one vortex</strong> mode and <strong>two wave</strong> modes</li>
 </ul>
@@ -12111,7 +12091,24 @@ Stockholm University, Stockholm, Sweden
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><div align="center">
+<img src="./fig/flow_flux_schem.png" alt="Drawing" style="width: 75%;"/>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>APE of PE available for conversion into KE</li>
+<li>Energy cascades into other scales due to transfer term. Flux +ve -&gt; Forward cascade &amp; -ve -&gt; Inverse cascade</li>
+<li>To make analysis more interesting we decompose the fluxes. Normal modes}</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12168,7 +12165,22 @@ Stockholm University, Stockholm, Sweden
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Confirmed with DNS results.</li>
+<li>Compenstated spectra on the left -&gt; k-5/3</li>
+<li>Flux on the right -&gt; Forward cascade</li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12449,7 +12461,7 @@ $\green{{\bf u_r} \cdot \nabla}$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>While maintaining, $|\zeta| \sim |d|$ in contrast with QG where $|\zeta| &gt;&gt; |d|$</p>
+<p>While allowing, $|\zeta| \sim |d|$ in contrast with QG where $|\zeta| &gt;&gt; |d|$</p>
 
 </div>
 </div>
@@ -12548,10 +12560,10 @@ $$\frac{\partial \theta}{\partial t}+ \green{{\bf u}_r \cdot \nabla} \theta   = 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.5.-Normal-modes-of-toy-model-equations">2.5. Normal modes of toy model equations<a class="anchor-link" href="#2.5.-Normal-modes-of-toy-model-equations">&#182;</a></h4><ol>
-<li>Linearize the toy-model equations</li>
-<li>Convert the equations in the spectral plane</li>
-<li>Solve the eigen-value problem</li>
+<h2 id="2.-Quest-for-the-simplest-model">2. Quest for the simplest model<a class="anchor-link" href="#2.-Quest-for-the-simplest-model">&#182;</a></h2><h4 id="2.6.-Normal-modes-of-toy-model-equations">2.6. Normal modes of toy model equations<a class="anchor-link" href="#2.6.-Normal-modes-of-toy-model-equations">&#182;</a></h4><ol>
+<li><strong>Linearize</strong> the toy-model equations</li>
+<li>Convert the equations in the <strong>spectral</strong> plane</li>
+<li>Solve the <strong>eigenvalue problem</strong></li>
 </ol>
 
 </div>
@@ -12582,7 +12594,7 @@ where, $\omega =  \sqrt{f^2+k^2c^2}$</p>
 
 </div>
 </div>
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12598,7 +12610,7 @@ where, $\omega =  \sqrt{f^2+k^2c^2}$</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
