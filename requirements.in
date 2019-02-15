@@ -1,0 +1,3 @@
+wordcloud
+nbconvert
+-e "git+https://github.com/ashwinvis/jupyter-wordcloud#egg=jupyter-wordcloud"

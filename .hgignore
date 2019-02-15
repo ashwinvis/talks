@@ -16,3 +16,5 @@ pdf/
 
 talks/fig/*pdf
 talks/fig/*tif
+
+node_modules
