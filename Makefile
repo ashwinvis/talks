@@ -81,3 +81,11 @@ misu_seminar2018:
 misu_seminar2018.zip: talks/misu_seminar2018.slides.html
 	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
 
+seminar2019: talks/seminar2019.slides.html
+
+talks/%.slides.html: ipynb/%.ipynb
+	jupyter-nbconvert $< --to slides --output-dir talks --config=$(basename $<)_config.py
+	cp -f $(basename $<).css talks/custom.css
+
+%.zip: talks/%.slides.html
+	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
