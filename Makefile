@@ -53,7 +53,7 @@ localize: cleantpl js/mathjax.tpl js/slides_reveal.tpl
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
 	cd ipynb && jupyter-nbconvert $(notdir $<) --to slides --post serve
 
-index: ipynb/index.ipynb
+index.html: ipynb/index.ipynb
 	jupyter-nbconvert ipynb/index.ipynb --to html --output-dir $(PWD)
 
 # Make slides as static HTML files
