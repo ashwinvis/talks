@@ -1,11 +1,10 @@
 IPYNBDIR := ipynb
-
 IPYNBFILES := $(shell find $(IPYNBDIR) -name '*.ipynb')
-
-IPYNBPRES = $(basename $(IPYNBFILES))
+IPYNBPRES := $(basename $(IPYNBFILES))
+IPYNBCONFIG := $(IPYNBDIR)/config.py
+IPYNBCSS := custom.css
 
 NBCONVERT_ROOT := $(shell pip show nbconvert | awk '/Location/{printf("%s/%s", $$2, "nbconvert")}')
-
 RPWD := $(shell pwd | sed -e 's,\/,\\\/,g')
 
 define STR_HELP
@@ -16,16 +15,15 @@ help: print this help.
 notebook: run a jupyter-notebook.
 
 ipynb/pres*: make the slides and display them (use Control-C to stop this server).
+             for example: make ipynb/pres00_intro_first_steps
 
-for example:
-
-make ipynb/pres00_intro_first_steps
+talks/pres*.slide.html: build static html slides
 
 endef
 
 export STR_HELP
 
-.PHONY: help notebook $(IPYNBPRES)
+.PHONY: help notebook $(IPYNBPRES) assets
 
 help:
 	@echo "$$STR_HELP"
@@ -40,14 +38,17 @@ list:
 	@echo $(IPYNBPRES)
 
 cleantpl:
-	rm -f js/*.tpl
+	rm -f assets/*.tpl
 
-js/%.tpl: $(NBCONVERT_ROOT)/templates/html/%.tpl
+assets/%.tpl: $(NBCONVERT_ROOT)/templates/html/%.tpl
 	cp -f $< $@
-	sed -i -e 's/https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs/\.\.\/js/' $@
 
-localize: cleantpl js/mathjax.tpl js/slides_reveal.tpl
-	sed -i -e 's/mathjax\/2\.7\.1/MathJax-2\.7\.1/' ./js/mathjax.tpl
+assets: cleantpl assets/mathjax.tpl assets/slides_reveal.tpl
+
+localize: assets
+	sed -i -E 's|https://cdnjs.cloudflare.com/ajax/libs|../node_modules|' assets/mathjax.tpl
+	sed -i -E 's|mathjax/2.7.5|mathjax|' assets/mathjax.tpl
+	#ln -rsf node_modules/mathjax/latest.js node_modules/mathjax/MathJax.js
 
 # --ServePostProcessor.ip='127.0.0.2'
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
@@ -57,35 +58,17 @@ index.html: ipynb/index.ipynb
 	jupyter-nbconvert ipynb/index.ipynb --to html --output-dir $(PWD)
 
 # Make slides as static HTML files
-phd_summer_seminar:
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
-
 agu_fallmeeting2017: localize
 	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
 	cp -f ipynb/$@.css talks/custom.css
 
-agu_fallmeeting2017.zip: talks/agu_fallmeeting2017.slides.html
-	7z a $@ talks/fig/agu_* talks/fig/logo_* $< talks/custom.css js
 
-flowmeeting2018:
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
-	cp -f ipynb/$@.css talks/custom.css
-
-flowmeeting2018.zip: talks/flowmeeting2018.slides.html
-	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
-
-misu_seminar2018:
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
-	cp -f ipynb/$@.css talks/custom.css
-
-misu_seminar2018.zip: talks/misu_seminar2018.slides.html
-	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
-
-seminar2019: talks/seminar2019.slides.html
-
-talks/%.slides.html: ipynb/%.ipynb
-	jupyter-nbconvert $< --to slides --output-dir talks --config=$(basename $<)_config.py
-	cp -f $(basename $<).css talks/custom.css
+talks/%.slides.html: ipynb/%.ipynb localize
+	jupyter-nbconvert $< --to slides --output-dir $(dir $@) --config=$(IPYNBCONFIG) --Application.log_level=10
+	cp -f $(dir $<)$(IPYNBCSS) $(dir $@)$(IPYNBCSS)
 
 %.zip: talks/%.slides.html
-	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css js
+	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css node_modules
+
+
+seminar2019: talks/seminar2019.slides.html

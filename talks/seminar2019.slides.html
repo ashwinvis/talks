@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +11,12 @@
 
 <title>seminar2019 slides</title>
 
-<script src="../js/require.min.js"></script>
-<script src="../js/jquery.min.js"></script>
+<script src="../node_modules/requirejs/require.js"></script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="../js/reveal.js-3.6.0/css/reveal.css">
-<link rel="stylesheet" href="../js/reveal.js-3.6.0/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="../node_modules/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="../node_modules/reveal.js/css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -25,19 +24,19 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = '../js/reveal.js-3.6.0/css/print/pdf.css';
+        link.href = '../node_modules/reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="../js/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
+<script src="../node_modules/reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../node_modules/mathjax/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -59,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="../js/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 
 <style type="text/css">
     /*!
@@ -13069,45 +13068,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -14055,8 +14015,8 @@ require(
       waitSeconds: 15
     },
     [
-      "../js/reveal.js-3.6.0/lib/js/head.min.js",
-      "../js/reveal.js-3.6.0/js/reveal.js"
+      "../node_modules/reveal.js/lib/js/head.min.js",
+      "../node_modules/reveal.js/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -14071,9 +14031,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "../js/reveal.js-3.6.0/lib/js/classList.js",
+                { src: "../node_modules/reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "../js/reveal.js-3.6.0/plugin/notes/notes.js",
+                { src: "../node_modules/reveal.js/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
