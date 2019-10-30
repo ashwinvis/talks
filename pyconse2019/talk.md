@@ -21,6 +21,12 @@ href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
 4.0 International License</a>
 </div>
 
+???
+
+- Good afternoon all!
+- Now I will present my talk titled ...
+- Thank: SU for the opportunity to come here
+
 ---
 
 .pull-left[
@@ -54,6 +60,15 @@ we are
 
 ]
 
+???
+
+- My **name** is Ashwin
+- We are a **group of researchers** with focus on CFD: FluidDyn Project
+- Heavy **users** of Python
+- **Transonic**: 
+  - born out of the necessities of writing high-performance code
+  - collaboration between KTH and SU
+- **
 
 ---
 
@@ -81,10 +96,15 @@ else:
 <img src="./images/noun_confused.svg" style="height: 10em"/>
 ]
 
+???
+
+- Show of hands if...
 
 ---
 class: center, middle, inverse
+
 # Brief guide on writing<br/> optimized, maintainable Python code
+
 ---
 layout: false
 .left-column[
@@ -107,7 +127,21 @@ layout: false
 - Test driven development to maintain correctness
 
 ]
+
+???
+- Python's good design decision: emphasis on **readability**. At a cost of
+  **performance**.
+- Real world problems: do not need a lot of optimization
+- CPU bound: most of runtime spent in CPU: eg. linear algebra, calculus,
+  statistics
+- I/O bound: in communications: web development
+- cProfile: TODO: example?
+- Optimize logic
+- If you should optimize, write unit-tests before you start.
+
+
 ---
+
 .left-column[
   ## Should you optimize?
   ## Optimize hotspots
@@ -135,7 +169,16 @@ alt="Profiling FluidSim, a computational fluid dynamics code"/>
   <span style="font-variant:small-caps;">Mohanan, A. V., Bonamy, C., Linares, M. C., and Augier, P.</span> 2019 FluidSim: Modular, Object-Oriented Python Package for High-Performance CFD Simulations <i>J. Open Res. Softw.</i>, <b>7</b>, 14. doi:<a href="https://doi.org/10.5334/jors.239">10.5334/jors.239</a>
   <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.5334%2Fjors.239&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=FluidSim%3A%20Modular%2C%20Object-Oriented%20Python%20Package%20for%20High-Performance%20CFD%20Simulations&amp;rft.jtitle=Journal%20of%20Open%20Research%20Software&amp;rft.volume=7&amp;rft.issue=1&amp;rft.aufirst=Ashwin%20Vishnu&amp;rft.aulast=Mohanan&amp;rft.au=Ashwin%20Vishnu%20Mohanan&amp;rft.au=Cyrille%20Bonamy&amp;rft.au=Miguel%20Calpe%20Linares&amp;rft.au=Pierre%20Augier&amp;rft.date=2019-04-26&amp;rft.pages=14&amp;rft.issn=2049-9647&amp;rft.language=en"></span>
 ]
+
 ]
+
+???
+- Two path ways:
+  1. **interface** with existing libs with or without Python
+  2. **extend** code: AOT/JIT
+- Set a target: good starting point
+- Example: fluidsim. > 97% runtime spent in compiled functions
+
 ---
 
 .left-column[
@@ -172,7 +215,13 @@ alt="Profiling FluidSim, a computational fluid dynamics code"/>
 ![](./images/noun_equals.svg)
 
 ]
+
 ]
+
+???
+Software design perspective, optimize at different levels:
+
+- programs, interpreters, modules, functions, code blocks, expressions, calls
 
 ---
 
@@ -194,10 +243,19 @@ alt="Profiling FluidSim, a computational fluid dynamics code"/>
 
   - means as a developer ...
 ]
+
+???
+- basis of the Scientific Python ecosystem
+- but it also means, as a developer...
+
 ---
+
 class: center, middle, inverse
 
 # Several design choices!
+
+???
+- there are hard decisions to make
 
 ---
 
@@ -209,7 +267,8 @@ class: background
 A variety of Python accelerators exists.
 Different ...
   * levels of optimization.
-  * targets.
+  - implementation details
+  * targets for generating machine code.
 
 
 ---
@@ -226,21 +285,42 @@ features implemented
   - Numba
 
 ---
+
 class: center, middle, inverse
 
 # Introducing: Transonic!
 
-Pure Python package (>= 3.6)<br/>to easily accelerate modern Python+Numpy code<br/>with different accelerators
 
 <div align="middle">
     <a href="https://transonic.readthedocs.io">transonic.readthedocs.io</a>    
 </div>
 
+???
+which begs the question...
+
 ---
 
 # What is Transonic, anyway?
 
-- Keep your Python-Numpy code clean and "natural" 🧘
+.left-column[
+<p><a href="https://commons.wikimedia.org/wiki/File:FA-18_Hornet_breaking_sound_barrier_(7_July_1999).jpg#/media/File:FA-18_Hornet_breaking_sound_barrier_(7_July_1999).jpg"><img
+src="https://upload.wikimedia.org/wikipedia/commons/d/d0/FA-18_Hornet_breaking_sound_barrier_%287_July_1999%29.jpg"
+alt="FA-18 Hornet breaking sound barrier (7 July 1999).jpg" width="640"
+height="457"></a>
+</p>
+
+]
+.right-column[
+
+> /trænˈsɑnɪk/ _adj._ just below, or just above the speed of sound .red[*]
+
+Pure Python package (>= 3.6) to easily _accelerate_ modern Python+Numpy code
+
+- Static analysis of extended Abstract Syntax Tree (AST) a.k.a. Full Syntax Tree
+  (FST) using `beniget` and `transonic.extast`.
+
+- Generates code for different backends: `cython`, `pythran`, `numba`.
+  Keep your Python-Numpy code "clean and natural" 🧘
 
 - Clean **type annotations** (🐍 3)
 
@@ -252,13 +332,40 @@ Pure Python package (>= 3.6)<br/>to easily accelerate modern Python+Numpy code<b
 
 - Accelerate **functions**, **methods** (of classes) and **blocks** of code
 
+]
+
+.footnote-cite[
+
+.blue[*] image: <a href="https://commons.wikimedia.org/wiki/File:FA-18_Hornet_breaking_sound_barrier_(7_July_1999).jpg">
+Ensign John Gay, U.S. Navy</a>
+
+.red[*] source: [wiktionary.org](https://en.wiktionary.org/wiki/transonic)
+
+]
+
+???
+> Wordplay: on transpiling and our background in fluid mechanics. Sound barrier
+> an analogy for speed of native code.
+
+- a powerful analyzer and thin runtime layer
+- different backends
+- no boilerplate
+- type hints
+- no unnecessary modules: like `cython` and `pythran`
+- both AOT and JIT, even if JIT is not supported <!-- FIXME: JIT for Cython? --->
+- accelerate from functions and methods - focus of this talk.
+
 
 ---
+
 class: center, middle, inverse
 
 # Few Transonic code examples
 
 The following codes can be accelerated with Pythran, Cython and Numba.
+
+???
+Take a look at a few examples...
 
 ---
 
@@ -291,10 +398,22 @@ def row_sum_loops(arr: T0, columns: T1):
     return res
 ```
 
-AOT extensions can be produced via `setup.py` or using `transonic` CLI tool.
+AOT extensions can be produced via `setuptools` or using `transonic` CLI tool.
+
+???
+
+Example for
+- a vectorized numpy code and a version with loops
+- recently we also support type-hints for `memview`
+
+Build using 
+- `setuptools` with `setup.py`
+- `transonic` CLI
+
 
 ---
-### Ahead-of-time compilation: how it works
+
+### Ahead-of-time (AOT) compilation: how it works
 
 
 ```sh
@@ -345,6 +464,10 @@ def func(a, b):
     return np.exp(a) * b * add(a, b)
 ```
 
+???
+
+<!-- FIXME: how it works part-->
+
 ---
 
 ### Type annotations
@@ -365,6 +488,10 @@ A1 = Array[np.float32, N + 1]
 def compute(a: A, b: A, c: T, d: A1):
     ...
 ```
+
+???
+
+FIXME: add a simple example
 
 ---
 
@@ -388,6 +515,10 @@ def use_add(n: int = 10000):
 
 ```
 
+???
+
+FIXME: show how it produces
+
 ---
 
 ### Accelerate methods of classes
@@ -404,11 +535,15 @@ class MyClass:
         return self.attr + arg
 ```
 
+???
+FIXME: show output
+
 ---
 
 ### Benchmark utilties
-Either using `TRANSONIC_BACKEND={pythran,numba,cython}` environment variable on functions with `@jit` decorator; or...
 .right-column[
+Either using `TRANSONIC_BACKEND={pythran,numba,cython}` environment variable on functions with `@jit` decorator; or...
+
 ```python
 import numpy as np
 from transonic import jit, wait_for_all_extensions
@@ -439,6 +574,13 @@ for backend in ("numba", "pythran"):
 ]
 .left-column[
 
+<em>Example: <a href="https://en.wikipedia.org/wiki/Rotation_(mathematics)">rotation</a></em>
+<a title="Jochen Burghardt [CC BY-SA 4.0
+(https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons"
+href="https://commons.wikimedia.org/wiki/File:Coordinate_system_rotation_svg.svg"><img
+width="512" alt="Coordinate system rotation svg"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Coordinate_system_rotation_svg.svg/512px-Coordinate_system_rotation_svg.svg.png"></a>
+
 ```
 Transonic 0.4.1
 Pythran 0.9.3post1
@@ -454,6 +596,12 @@ fxfy_numba   : 0.952 * norm
 fxfy_pythran : 0.152 * norm
 ```
 ]
+
+???
+
+Example of a rotation operator:
+- `ft`: tangential, `fn`: normal
+- `fx`, `fy`: x and y
 
 ---
 
