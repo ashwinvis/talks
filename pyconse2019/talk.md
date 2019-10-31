@@ -23,7 +23,7 @@ href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
 
 ???
 
-- Good afternoon all!
+- Good morning all!
 - Now I will present my talk titled ...
 - Thank: SU for the opportunity to come here
 
@@ -54,7 +54,12 @@ we are
 
 - Researcher: Computational fluid dynamics of atmospheric flows
 
-- Python user / core developer of [FluidDyn project](https://fluiddyn.rtfd.io) (including [`transonic`](https://transonic.rtfd.io))
+- Python user / core developer of [FluidDyn project](https://fluiddyn.rtfd.io)
+
+  - Simulations
+  - Laboratory experiments
+  - Image processing
+  - and also, [`transonic`](https://transonic.rtfd.io)!
 
 ![](./images/logo_fluiddyn_rect.png)
 
@@ -103,13 +108,16 @@ else:
     print("It is probably useful... :)")
 
 ```
-]
+?]
 
 ]
 
 ???
 
 - Show of hands if...
+* Python + NumPy. [Probably also
+  Pandas!](https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html).
+  Remains to be seen :)
 
 ---
 
@@ -124,17 +132,87 @@ else:
 
 .right-column[
 
-## The short version of this talk
+## the short version of this talk
 
-1. Whether, when and how to optimize Python code
+1. Whether, when and how to **optimize** Python code
 
-1. Solutions exist, but also a "paradox of choice": (`cython`, `pythran`,
+1. Solutions exist, but also a **paradox of choice**: (`cython`, `pythran`,
    `numba`, and many more...)
 
-1. [`transonic`](https://transonic.readthedocs.io), a new pure-Python package,
-   a unifying front-end for generating extensions and simplifying development
+1. **[`transonic`](https://transonic.readthedocs.io), a new pure-Python package**,
+   a unifying front-end for generating extensions 
+
 
 ]
+
+???
+
+1. optimize
+1. too many choices of extension frameworks. Imagine 5 functions to optimize
+   with 3 frameworks: 15 versions of similar code!
+1. introducing `transonic` and simplifying development
+
+You might be wondering...
+
+---
+
+
+# Overview
+
+.left-column[
+
+## `$ users`
+## `$ less`
+## `$ man`
+
+]
+
+.right-column[
+
+## is this really important?
+
+* Python is really good in **rapid prototyping**. Avoids scenarios like:
+
+![<obligatory xkcd meme/>](https://imgs.xkcd.com/comics/compiling.png)
+
+
+]
+
+???
+
+Man! Is this really important?
+
+* Python strengths: rapid prototyping
+
+---
+
+# Overview
+
+.left-column[
+
+## `$ users`
+## `$ less`
+## `$ man`
+
+]
+
+.right-column[
+
+## Is this really important?
+
+* Eventually, you discover your inner [Need for Speed...](https://twitter.com/pypyproject/status/1186680838014025728)
+
+![](./images/tw_pypy.png)
+
+]
+
+???
+
+* Eventually you discover NFS
+* And you benchmark, only to realize... "the more you gaze into the benchmarking
+  abyss the more it gazes back"
+
+Doesn't have to be this way. Without further ado...
 
 ---
 
@@ -156,7 +234,7 @@ layout: false
 
 - CPU-bound or I/O-bound?
 
-- Measure ⏱ , don't guess! **Profile** to find the bottlenecks
+- Measure, don't guess! **Profile** to find the bottlenecks ⏱️
   - `python -m cProfile --help`
 
 - Use efficient **algorithms** and **data structures**
@@ -172,8 +250,8 @@ layout: false
 - CPU bound: most of runtime spent in CPU: eg. linear algebra, calculus,
   statistics
 - I/O bound: in communications: web development
-- cProfile: TODO: example?
-- Optimize logic
+- `cProfile` standard library
+- Optimize logic usually helps
 - If you should optimize, write unit-tests before you start.
 
 
@@ -365,7 +443,7 @@ Pure Python package (>= 3.6) to easily _accelerate_ modern Python+Numpy code
 
 - Ahead-of-time (**AOT**) and just-in-time (**JIT**) modes
 
-- **JIT for AOT** compilers (especially for Pythran)
+- **JIT for AOT** compilers (especially for `pythran`)
 
 - Accelerate **functions**, **methods** (of classes) and **blocks** of code
 
@@ -389,8 +467,7 @@ Ensign John Gay, U.S. Navy</a>
 - no boilerplate
 - type hints
 - no unnecessary modules: like `cython` and `pythran`
-- both AOT and JIT, even if JIT is not supported <!-- FIXME: JIT for Cython? --->
-- accelerate from functions and methods - focus of this talk.
+- both AOT and JIT, even if JIT is not supported
 
 
 ---
@@ -488,6 +565,8 @@ Transpiles and compiles (except for `python` and `numba` backends).
 
 ### Just-in-time compilation
 
+.pull-left[
+
 ```python
 import numpy as np
 
@@ -499,17 +578,55 @@ def add(a, b):
 @jit
 def func(a, b):
     return np.exp(a) * b * add(a, b)
+
+
+a = np.random.rand(10000)
+b = np.random.rand(10000)
+func(a, b)
+
+
 ```
+
+]
+.pull-right[
+
+```sh
+❯ TRANSONIC_BACKEND="pythran" python example_jit.py
+compile extension
+INFO: Schedule pythranization of file /home/avmo/.transonic/pythran/__jit__/example_jit/func.py
+
+```
+
+* Function executes with the Python code available
+* Few seconds later...
+
+<pre><code>
+❯ tree ~/.transonic/pythran      
+/home/avmo/.transonic/pythran
+├── __jit__
+│   └── example_jit
+│       ├── func_333e039c51f2427341f4df75a7a9c78f_27bcb4008840f53aa327f4dad04ac198.cpython-37m-x86_64-linux-gnu.so
+│       ├── func.py
+│       └── func.pythran
+└── __jit_class__
+
+</code></pre>
+
+* Next time, the function, `func` runs faster
+
+]
 
 ???
 
-<!-- FIXME: how it works part-->
+* Function executes with the Python code available
+* Few seconds later...
+* Next time, the function, `func` runs faster
 
 ---
 
 ### Type annotations
 
-From simple type-hints...
+From simple...
 
 ```python
 import h5py
@@ -542,13 +659,17 @@ def compute(a: A, b: A, c: T, d: A1):
 
 ???
 
+- Simple to more advanced type annotations.
 - `import h5py`: not transpiled, dead code removal
 
 ---
 
 ### `inline` functions
 
-Useful for Cython
+
+.pull-left[
+
+- Useful for Cython
 
 ```python
 from transonic import boost
@@ -568,9 +689,57 @@ def use_add(n: int = 10000):
 
 ```
 
+- `transonic` transpiles into two files and `cython` compiles a binary:
+
+```sh
+__cython__/example_add.pxd
+__cython__/example_add.py
+__cython__/example_add_0d7243d23718cf83422bcd646773a5be.cpython-37m-x86_64-linux-gnu.so
+```
+
+]
+.pull-right[
+
+
+```python
+import cython
+
+import numpy as np
+cimport numpy as np
+
+cpdef inline cython.int add(cython.int a, cython.int b)
+
+@cython.locals(_=cython.int)
+cpdef use_add(cython.int n=*)
+```
+
+
+```python
+try:
+    import cython
+except ImportError:
+    from transonic_cl import cython
+
+
+def add(a, b):
+    return (a + b)
+
+
+def use_add(n=10000):
+    for _ in range(n):
+        tmp = add(tmp, 1)
+    return tmp
+
+
+__transonic__ = ('0.4.2',)
+```
+
+]
+
 ???
 
-FIXME: show how it produces
+* `cython inline` equivalent to C inline
+- How the generated Cython code looks on the right
 
 ---
 
@@ -588,13 +757,34 @@ class MyClass:
         return self.attr + arg
 ```
 
+Note: 
+
+- `pythran` does not support Python classes by design, but through
+`transonic`: yes you can!
+
+- Some [restrictions](https://transonic.readthedocs.io/en/latest/examples/methods.html).
+
 ???
-FIXME: show output
+
+- OOP even for Pythran
+- Some restrictions mentioned in the docs
 
 ---
 
 ### Benchmark utilties
+
+.left-column[
+
+<em>Example: <a href="https://en.wikipedia.org/wiki/Rotation_(mathematics)">rotation</a></em>
+
+<a title="Oleg Alexandrov [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Rotation_illustration2.svg"><img width="512" alt="Rotation illustration2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Rotation_illustration2.svg/512px-Rotation_illustration2.svg.png"></a>
+
+![](./images/wiki_rot_eqn.png)
+
+]
+
 .right-column[
+
 Either using `TRANSONIC_BACKEND={pythran,numba,cython}` environment variable on functions with `@jit` decorator; or...
 
 ```python
@@ -612,49 +802,73 @@ def fxfy(ft, fn, theta):
 fxfy_pythran = jit(backend="pythran", native=True, xsimd=True)(fxfy)
 fxfy_numba = jit(backend="numba")(fxfy)
 ```
+
+]
+
+???
+
+Example of a rotation operator:
+- One coordinate system to another
+- `ft`: tangential, `fn`: normal
+- `fx`, `fy`: x and y
+
+
+---
+
+### Benchmark utilties
+
+.pull-left[
+
 ```python
 print_versions()
-# warmup
-fxfy_pythran(ft, fv, theta); fxfy_numba(ft, fv, theta); wait_for_all_extensions()
+# Warmup
+fxfy_pythran(ft, fv, theta);
+fxfy_numba(ft, fv, theta);
+wait_for_all_extensions()
 
-theta = np.linspace(0, 2 * np.pi, 10000); ft = 2.5 * theta; fv = 1.5 * theta;
+# Prepare inputs
+theta = np.linspace(0, 2 * np.pi, 10000);
+ft = 2.5 * theta;
+fv = 1.5 * theta;
 loc = locals()
-norm = timeit_verbose("fxfy(ft, fv, theta)", globals=loc)
+
+# Establish a baseline benchmark
+norm = timeit_verbose(
+  "fxfy(ft, fv, theta)",
+  globals=loc
+)
+
+# Run benchmarks
 for backend in ("numba", "pythran"):
-    timeit_verbose(f"fxfy_{backend}(ft, fv, theta)", globals=loc, norm=norm)
+    timeit_verbose(
+      f"fxfy_{backend}(ft, fv, theta)",
+      globals=loc,
+      norm=norm
+    )
 
 ```
 ]
-.left-column[
-
-<em>Example: <a href="https://en.wikipedia.org/wiki/Rotation_(mathematics)">rotation</a></em>
-<a title="Jochen Burghardt [CC BY-SA 4.0
-(https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons"
-href="https://commons.wikimedia.org/wiki/File:Coordinate_system_rotation_svg.svg"><img
-width="512" alt="Coordinate system rotation svg"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Coordinate_system_rotation_svg.svg/512px-Coordinate_system_rotation_svg.svg.png"></a>
-
+.pull-right[
 ```
 Transonic 0.4.1
 Pythran 0.9.3post1
 Numba 0.46.0
 Cython 0.29.13
 
-INFO: Schedule pythranization
-compile extension
+fxfy                             : 1.000 * norm
+norm = 6.76e-04 s
+fxfy_numba                       : 0.969 * norm
+fxfy_pythran                     : 0.123 * norm
 
-fxfy         : 1.000 * norm
-norm = 6.90e-04 s
-fxfy_numba   : 0.952 * norm
-fxfy_pythran : 0.152 * norm
+# for-loops version (refer docs)
+fxfy_loops_numba                 : 0.792 * norm
+fxfy_loops_pythran               : 0.787 * norm
 ```
 ]
 
 ???
 
-Example of a rotation operator:
-- `ft`: tangential, `fn`: normal
-- `fx`, `fy`: x and y
+For this case, Pythran is really good in optimizing the vectorized code.
 
 ---
 
@@ -717,6 +931,9 @@ Feedback appreciated!<br/>
 <li> docs: <a href="https://transonic.readthedocs.io">transonic.readthedocs.io</a>
 <li> vision: <a href="https://fluiddyn.bitbucket.io/transonic-vision.html">fluiddyn.bitbucket.io/transonic-vision.html</a>
 <li> github: <a href="https://github.com/fluiddyn/transonic">github.com/fluiddyn/transonic</a>
+<li> demo: <a href="https://mybinder.org/v2/gh/fluiddyn/transonic/master?urlpath=lab/tree/doc/ipynb/executed">
+<img src="https://mybinder.org/badge_logo.svg"/>
+</a>
 </ul>
 </div>
 
