@@ -72,18 +72,31 @@ we are
 
 ---
 
+layout: false
+
+# Overview
+
+.left-column[
+
 ## `$ users`
 
-### this talk is meant for
+]
+.right-column[
 
 .pull-left[
+
+## this talk is meant for
+
+<img src="./images/noun_confused.svg" style="height: 10em"/>
+]
+.pull-right[
 ```python
 
 if input("I ...") in (
     "use NumPy a lot",
     "write Python extensions"
     "write CPU-intensive codes",
-    "think my Python codes are really slow"
+    "think my Python codes are slow"
 ):
     print("Yes, this talk is for you!")
 else:
@@ -92,8 +105,6 @@ else:
 ```
 ]
 
-.pull-right[
-<img src="./images/noun_confused.svg" style="height: 10em"/>
 ]
 
 ???
@@ -101,6 +112,32 @@ else:
 - Show of hands if...
 
 ---
+
+# Overview
+
+.left-column[
+
+## `$ users`
+## `$ less`
+
+]
+
+.right-column[
+
+## The short version of this talk
+
+1. Whether, when and how to optimize Python code
+
+1. Solutions exist, but also a "paradox of choice": (`cython`, `pythran`,
+   `numba`, and many more...)
+
+1. [`transonic`](https://transonic.readthedocs.io), a new pure-Python package,
+   a unifying front-end for generating extensions and simplifying development
+
+]
+
+---
+
 class: center, middle, inverse
 
 # Brief guide on writing<br/> optimized, maintainable Python code
@@ -157,7 +194,7 @@ layout: false
 
   - _Just in Time_ JIT: `Numba`, ...
 
-- Set an optimization target .red[*]
+- Set yourself a goal, say: .red[*]
 
 > 80 percent of the runtime is spent in 20 percent of the source code - _S. Meyers_
 
@@ -288,7 +325,7 @@ features implemented
 
 class: center, middle, inverse
 
-# Introducing: Transonic!
+# Enter: Transonic!
 
 
 <div align="middle">
@@ -472,14 +509,28 @@ def func(a, b):
 
 ### Type annotations
 
-Like C++ templates
+From simple type-hints...
+
+```python
+import h5py
+
+from transonic import boost
+
+
+@boost
+def myfunc(a: int, b: float):
+    return a * b
+```
+
+... to more advanced **fused types** / **generic programming** / **polymorphism**
+
 
 ```python
 import numpy as np
 from transonic import Type, NDim, Array, boost
 
-T = Type(int, float, np.complex128)
-N = NDim(1, 2, 3)
+T = Type(int, float, np.complex128)  # dtype can be int, float or complex
+N = NDim(1, 2, 3)  # dimensions of array can be 1, 2, or 3
 
 A = Array[T, N]
 A1 = Array[np.float32, N + 1]
@@ -491,11 +542,13 @@ def compute(a: A, b: A, c: T, d: A1):
 
 ???
 
-FIXME: add a simple example
+- `import h5py`: not transpiled, dead code removal
 
 ---
 
 ### `inline` functions
+
+Useful for Cython
 
 ```python
 from transonic import boost
