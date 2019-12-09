@@ -82,7 +82,7 @@ layout: false
 
   where,
   $\tilde{u}$ is the resolved velocity and
-  $\nabla^S \tilde{u} = S_{ij} = \frac{1}{2} \left( \delta_i \tilde{u}_j + \delta_j \tilde{u}_i \right)$
+  $\nabla^S \tilde{u} = \frac{1}{2} \left( \delta_i \tilde{u}_j + \delta_j \tilde{u}_i \right)$.
 
 * Coefficient, $C_s$ wall damped (Mason & Thompson, 1991, JFM) as:
 
@@ -165,17 +165,19 @@ layout: false
 ```
 
 
+* Grid dimensions, $L_x, L_y, L_z = (2\pi, 1, \pi)$ discretized into $(30, 24, 20)$ elements.
+
 * Time-stepping: BDF-EXT3 or Runge-Kutta. Right now: ??. CFL=0.8
 
 * Variety of [boundary condition primitives](https://nek5000.github.io/NekDoc/problem_setup/boundary_conditions.html).
 
-* Better (less ad-hoc) filtering (Lu L., Nazarov M., Fischer P. 2019; Nazarov M., 2013)
+* Better (less ad-hoc) filtering (for example: Lu L., Nazarov M., Fischer P. 2019; Nazarov M., 2013)
 
 ---
 
 # What is missing
 
-* Difficulties in maintaining turbulence
+* *Difficulties in maintaining turbulence*
 
 * Governing equation for the scalar (buoyancy / potential temperature)
 
