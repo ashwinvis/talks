@@ -1,6 +1,6 @@
 class: center, middle
 
-# Atmospheric Boundary Layer turbulence
+# Atmospheric Boundary Layer turbulence theory
 
 ## Ashwin Vishnu Mohanan
 
@@ -36,6 +36,7 @@ layout: false
 
 .left-column[
 
+## References
 ## Turbulence fundamentals
 
 ]
@@ -54,6 +55,7 @@ layout: false
 
 .left-column[
 
+## References
 ## Turbulence fundamentals
 ## Monin-Obukhov similarity theory
 
@@ -72,6 +74,7 @@ layout: false
 
 .left-column[
 
+## References
 ## Turbulence fundamentals
 ## Monin-Obukhov similarity theory
 ## Possible compressible formulation
@@ -90,6 +93,7 @@ layout: false
 
 .left-column[
 
+## References
 ## Turbulence fundamentals
 ## Monin-Obukhov similarity theory
 ## Possible compressible formulation
@@ -102,6 +106,24 @@ layout: false
 - Next steps?
 
 ]
+
+---
+
+# References
+
+1. Pope, S.B. Turbulent Flows. Cambridge University Press, 2000.
+
+1. Wyngaard, John C. Turbulence in the Atmosphere. Cambridge: Cambridge University Press, 2010. https://doi.org/10.1017/CBO9780511840524.
+
+1. Monin, A S, and A M Obukhov. “Basic Laws of Turbulent Mixing in the Surface Layer of the Atmosphere,” 1954, 30.
+
+1. Moeng, Chin-Hoh. “A Large-Eddy-Simulation Model for the Study of Planetary Boundary-Layer Turbulence.” Journal of the Atmospheric Sciences 41, no. 13 (July 1, 1984): 2052–62. https://doi.org/10.1175/1520-0469(1984)041<2052:ALESMF>2.0.CO;2.
+
+1. Cushman-Roisin, Benoit, and Jean-Marie Beckers. “Stratification.” In International Geophysics, 101:347–64. Elsevier, 2011. https://doi.org/10.1016/B978-0-12-088759-0.00011-0.
+
+1. Svensson, Gunilla, and Albert A. M. Holtslag. “Analysis of Model Results for the Turning of the Wind and Related Momentum Fluxes in the Stable Boundary Layer.” Boundary-Layer Meteorology 132, no. 2 (August 2009): 261–77. https://doi.org/10.1007/s10546-009-9395-1.
+
+1. Maronga, Björn, Christoph Knigge, and Siegfried Raasch. “An Improved Surface Boundary Condition for Large-Eddy Simulations Based on Monin–Obukhov Similarity Theory: Evaluation and Consequences for Grid Convergence in Neutral and Stable Conditions.” Boundary-Layer Meteorology, October 29, 2019. https://doi.org/10.1007/s10546-019-00485-w.
 
 ---
 class: center, middle, inverse
