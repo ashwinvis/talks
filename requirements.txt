@@ -6,10 +6,10 @@
 #
 -e git+https://github.com/ashwinvis/jupyter-wordcloud#egg=jupyter-wordcloud
 attrs==19.3.0             # via jsonschema
-bleach==3.1.0             # via nbconvert
+bleach==3.1.4             # via nbconvert
 certifi==2019.9.11        # via requests
 chardet==3.0.4            # via requests
-cicero==0.2.3
+cicero==0.2.3             # via -r requirements.in
 click==7.0                # via flask
 cycler==0.10.0            # via matplotlib
 decorator==4.4.1          # via traitlets
@@ -25,12 +25,12 @@ jsonschema==3.1.1         # via nbformat
 jupyter-core==4.6.1       # via nbconvert, nbformat
 kiwisolver==1.1.0         # via matplotlib
 markupsafe==1.1.1         # via jinja2
-matplotlib==3.1.1
+matplotlib==3.1.1         # via jupyter-wordcloud
 mistune==0.8.4            # via nbconvert
 more-itertools==7.2.0     # via zipp
-nbconvert==5.6.0
+nbconvert==5.6.0          # via -r requirements.in, jupyter-wordcloud
 nbformat==4.4.0           # via nbconvert
-numpy==1.17.3             # via matplotlib, wordcloud
+numpy==1.17.3             # via jupyter-wordcloud, matplotlib, wordcloud
 pandocfilters==1.4.2      # via nbconvert
 pillow==6.2.1             # via wordcloud
 pygments==2.4.2           # via nbconvert
@@ -44,8 +44,8 @@ traitlets==4.3.3          # via jupyter-core, nbconvert, nbformat
 urllib3==1.24.3           # via requests
 webencodings==0.5.1       # via bleach
 werkzeug==0.16.0          # via flask
-wordcloud==1.5.0
+wordcloud==1.5.0          # via -r requirements.in, jupyter-wordcloud
 zipp==0.6.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.5.1        # via jsonschema, kiwisolver
+# setuptools
