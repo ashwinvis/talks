@@ -17,7 +17,6 @@ pdf/
 talks/fig/*pdf
 talks/fig/*tif
 
-assets
 node_modules
 
 sandbox/
