@@ -1,3 +1,9 @@
+---
+
+title: Make your Python code fly at _transonic_ speeds!
+
+---
+
 class: center, middle
 
 # Make your Python code fly at _transonic_ speeds!
