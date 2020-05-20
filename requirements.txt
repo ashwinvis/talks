@@ -6,46 +6,44 @@
 #
 -e git+https://github.com/ashwinvis/jupyter-wordcloud#egg=jupyter-wordcloud  # via -r requirements.in
 attrs==19.3.0             # via jsonschema
-bleach==3.1.0             # via nbconvert
-certifi==2019.9.11        # via requests
+bleach==3.1.5             # via nbconvert
+certifi==2020.4.5.1       # via requests
 chardet==3.0.4            # via requests
 cicero==0.2.3             # via -r requirements.in
-click==7.0                # via flask
+click==7.1.2              # via flask
 cycler==0.10.0            # via matplotlib
-decorator==4.4.1          # via traitlets
+decorator==4.4.2          # via traitlets
 defusedxml==0.6.0         # via nbconvert
 entrypoints==0.3          # via nbconvert
 flask==1.0.2              # via cicero
 idna==2.8                 # via requests
-importlib-metadata==0.23  # via jsonschema
 ipython-genutils==0.2.0   # via nbformat, traitlets
 itsdangerous==1.1.0       # via flask
-jinja2==2.10.3            # via flask, nbconvert
-jsonschema==3.1.1         # via nbformat
-jupyter-core==4.6.1       # via nbconvert, nbformat
-kiwisolver==1.1.0         # via matplotlib
+jinja2==2.11.2            # via flask, nbconvert
+jsonschema==3.2.0         # via nbformat
+jupyter-core==4.6.3       # via nbconvert, nbformat
+kiwisolver==1.2.0         # via matplotlib
 markupsafe==1.1.1         # via jinja2
-matplotlib==3.1.1         # via jupyter-wordcloud
+matplotlib==3.2.1         # via jupyter-wordcloud, wordcloud
 mistune==0.8.4            # via nbconvert
-more-itertools==7.2.0     # via zipp
 nbconvert==5.6.0          # via -r requirements.in, jupyter-wordcloud
-nbformat==4.4.0           # via nbconvert
-numpy==1.17.3             # via jupyter-wordcloud, matplotlib, wordcloud
+nbformat==5.0.6           # via nbconvert
+numpy==1.18.4             # via jupyter-wordcloud, matplotlib, wordcloud
+packaging==20.4           # via bleach
 pandocfilters==1.4.2      # via nbconvert
-pillow==6.2.1             # via wordcloud
-pygments==2.4.2           # via nbconvert
-pyparsing==2.4.2          # via matplotlib
-pyrsistent==0.15.5        # via jsonschema
-python-dateutil==2.8.0    # via matplotlib
+pillow==7.1.2             # via wordcloud
+pygments==2.6.1           # via nbconvert
+pyparsing==2.4.7          # via matplotlib, packaging
+pyrsistent==0.16.0        # via jsonschema
+python-dateutil==2.8.1    # via matplotlib
 requests==2.21.0          # via cicero
-six==1.12.0               # via bleach, cycler, jsonschema, pyrsistent, python-dateutil, traitlets
-testpath==0.4.2           # via nbconvert
+six==1.14.0               # via bleach, cycler, jsonschema, packaging, python-dateutil, traitlets
+testpath==0.4.4           # via nbconvert
 traitlets==4.3.3          # via jupyter-core, nbconvert, nbformat
 urllib3==1.24.3           # via requests
 webencodings==0.5.1       # via bleach
-werkzeug==0.16.0          # via flask
-wordcloud==1.5.0          # via -r requirements.in, jupyter-wordcloud
-zipp==0.6.0               # via importlib-metadata
+werkzeug==1.0.1           # via flask
+wordcloud==1.7.0          # via -r requirements.in, jupyter-wordcloud
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
