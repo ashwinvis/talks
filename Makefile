@@ -72,3 +72,11 @@ talks/%.slides.html: ipynb/%.ipynb localize
 
 
 seminar2019: talks/seminar2019.slides.html
+
+cicero-%.md:
+	echo $@
+	cicero -f $(dir $@)/talk.md &
+
+%.pdf: cicero-%.md
+	decktape http://127.0.0.1:5000/ $@
+	killall cicero
