@@ -19,6 +19,12 @@ ipynb/pres*: make the slides and display them (use Control-C to stop this server
 
 talks/pres*.slide.html: build static html slides
 
+<dir>/talk.md: create a new cicero talk
+
+<dir>/talk: launch cicero talk as a Flask server (use Control-C to stop this server).
+
+<dir>/talk.pdf: generate PDF of a cicero talk using decktape
+
 endef
 
 export STR_HELP
@@ -57,12 +63,6 @@ $(IPYNBPRES): ipynb%: ipynb%.ipynb
 index.html: ipynb/index.ipynb
 	jupyter-nbconvert ipynb/index.ipynb --to html --output-dir $(PWD)
 
-# Make slides as static HTML files
-agu_fallmeeting2017: localize
-	jupyter-nbconvert ipynb/$@.ipynb --to slides --output-dir talks --config=ipynb/$@_config.py
-	cp -f ipynb/$@.css talks/custom.css
-
-
 talks/%.slides.html: ipynb/%.ipynb localize
 	jupyter-nbconvert $< --to slides --output-dir $(dir $@) --config=$(IPYNBCONFIG) --Application.log_level=10
 	cp -f $(dir $<)$(IPYNBCSS) $(dir $@)$(IPYNBCSS)
@@ -70,12 +70,17 @@ talks/%.slides.html: ipynb/%.ipynb localize
 %.zip: talks/%.slides.html
 	7z a $@ talks/fig/agu_* talks/fig/flow_* talks/fig/logo_* $< talks/custom.css node_modules
 
+%/talk.md:
+	@echo "Preparing a new talk from template"
+	@rsync -aPL template/talk* $(dir $@)
+	@cp -av template/images $(dir $@)
 
-seminar2019: talks/seminar2019.slides.html
+%/talk:
+	cicero -f $@.md &
 
-cicero%:
-	cicero -f $(dir $@)talk.md &
+%/talk.: %/talk
+	@echo Did you mean $(dir $@)talk?
 
-%.pdf: cicero%
+%.pdf: %
 	decktape http://127.0.0.1:5000/ $@
 	killall cicero
