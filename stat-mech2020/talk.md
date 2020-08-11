@@ -46,7 +46,27 @@ class: center, middle, inverse
 
 ---
 
-# 1-layer shallow water equations
+## 2D Euler equation
+
+
+$$\partial_t {\mathbf{u}} = - ({\mathbf{u}}.\nabla) {\mathbf{u}} - \frac{1}{\rho}\nabla p$$
+
+Useful for studying 2D turbulence.
+
+## Quasi geostrophic equation
+
+
+Quasi-geostrophic equation conserves an approximate *potential vorticity*:
+  $$\frac{Dq}{Dt} = 0,$$
+  $$ q = \nabla^2 \psi + \frac{{f_0}^2}{\tilde \rho}
+  \left(\frac{\tilde \rho}{{N^2}} {\partial_z \psi} \right) + {\beta} y, $$
+
+Incorporates rotation (Coriolis terms) and stratification (hydrostatic law) in
+a 2D model. Bridging **ideal 2D turbulence** to **atmospheric turbulence**
+
+---
+
+## 1-layer shallow water equations
 
 .left-column[
 
@@ -78,7 +98,7 @@ $$\partial_t h = - \nabla \cdot (h {\mathbf{u}})$$
 ]
 
 ---
-# Properties of shallow water equations
+## Properties of shallow water equations
 
 - Invariants:
   + mass \\(h \mathbf{u} \\),
@@ -102,6 +122,29 @@ class: center, middle, inverse
 
 # Results from literature
 
+
+---
+## Common themes and relation between thermodynamic ensembles and geophysical flows
+
+  - Similar to:
+    - microcanonical ensemble which conserves (N, V, E) and
+    - canonical ensemble which conserves (N, V, T),
+    - two-dimensional models conserve (mass,
+    energy, vorticity / potential vorticity and its higher powers)
+
+  - Statistical mechanics used to theoretically explain:
+
+    - Existence of an equillibrium state in forced-dissipative flows
+    - Energy cascade between large and small scales
+
+  - Separation of scales: instead of continuum and molecules, between mean flow and turbulent fluctuations
+
+.pull-left[
+![](./fig/synoptic.jpg)
+]
+.pull-right[
+![](./fig/mesoscale.jpg)
+]
 
 ---
 
@@ -128,15 +171,27 @@ class: center, middle, inverse
 
 ## Bouchet & Vennaile (2012) - Statistical mechanics of 2D and geophysical flows (review paper)
 
-- **Miller (1990), Robert & Sommeria (1992)**: formulated equillibrium statistical mechanics providing a Liouville theorem and expression for entropy:
+.left-column[
 
-$$ S = \int d^2 r \int d\sigma \rho \ln \rho $$
+![](./fig/jupiter_grs.png)
 
+]
+.right-column[
+
+- **Miller (1990), Robert & Sommeria (1992)**: formulated equillibrium
+  statistical mechanics providing a Liouville theorem and expression for
+  entropy:
+  $$ S = \int d^2 r \int d\sigma \rho \ln \rho $$
   where \\( \rho \\) is the pdf of the enstrophy \\( \sigma \\) within a
   distance \\( r \\).
 
-- As an explanation for stability of the great red spot of Jupiter
-  - Constant potential vorticity core, surrounded by shear
+- **Van der Waals-Cahn-Hilliard model**.
+  - Describes phase transitions (equillibria of bubbles, soap films). 
+  - Explanation for stability of the great red spot of Jupiter: a constant potential vorticity core, surrounded by
+  shear.
+  - A variational problem which minimizes free energy
+
+]
 
 ---
 
