@@ -20,3 +20,6 @@ talks/fig/*tif
 node_modules
 
 sandbox/
+
+assets/base
+assets/reveal

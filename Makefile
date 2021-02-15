@@ -1,10 +1,16 @@
+LOCALIZED ?= 0
+
 IPYNBDIR := ipynb
 IPYNBFILES := $(shell find $(IPYNBDIR) -name '*.ipynb')
 IPYNBPRES := $(basename $(IPYNBFILES))
-IPYNBCONFIG := $(IPYNBDIR)/config.py
 IPYNBCSS := custom.css
+ifeq ($(LOCALIZED), 1)
+  IPYNBCONFIG := $(IPYNBDIR)/config_localized.py
+else
+  IPYNBCONFIG := $(IPYNBDIR)/config.py
+endif
 
-NBCONVERT_ROOT := $(shell pip show nbconvert | awk '/Location/{printf("%s/%s", $$2, "nbconvert")}')
+NBCONVERT_ROOT := $(shell python -c "import site; print(site.PREFIXES[0])")/share/jupyter/nbconvert/
 RPWD := $(shell pwd | sed -e 's,\/,\\\/,g')
 
 define STR_HELP
@@ -12,12 +18,13 @@ This makefile can be used for
 
 help: print this help.
 
-notebook: run a jupyter-notebook.
+list: print a list of Jupyter notebook presentations
 
-ipynb/pres*: make the slides and display them (use Control-C to stop this server).
-             for example: make ipynb/pres00_intro_first_steps
+ipynb/*.ipynb: make the slides and display them (use Control-C to stop this server).
+	for example: make ipynb/seminar2019.ipynb
 
-talks/pres*.slide.html: build static html slides
+talks/*.slide.html: build static html slides. Note: this command is sensitive
+	to the environment variable LOCALIZED. LOCALIZED will use assets from node_modules
 
 <dir>/talk.md: create a new cicero talk
 
@@ -33,28 +40,28 @@ export STR_HELP
 
 help:
 	@echo "$$STR_HELP"
-
-notebook:
-	cd ipynb && python $(shell which jupyter-notebook)
-
-lab:
-	cd ipynb && python $(shell which jupyter-lab)
+	@echo jupyter-nbconvert templates: $(NBCONVERT_ROOT)
 
 list:
 	@echo $(IPYNBPRES)
 
 cleantpl:
-	rm -f assets/*.tpl
+	rm -rf assets/base assets/reveal
 
-assets/%.tpl: $(NBCONVERT_ROOT)/templates/html/%.tpl
-	cp -f $< $@
-
-assets: cleantpl assets/mathjax.tpl assets/slides_reveal.tpl
+ifeq ($(LOCALIZED), 1)
+assets: cleantpl
+	cp -r $(NBCONVERT_ROOT)/templates/base assets/
+	cp -r $(NBCONVERT_ROOT)/templates/reveal assets/
 
 localize: assets
-	sed -i -E 's|https://cdnjs.cloudflare.com/ajax/libs|../node_modules|' assets/mathjax.tpl
-	sed -i -E 's|mathjax/2.7.5|mathjax|' assets/mathjax.tpl
+	@echo 'Localized node packages enabled'
+	sed -i -E 's|https://cdnjs.cloudflare.com/ajax/libs|../node_modules|' assets/base/mathjax.html.j2
+	sed -i -E 's|mathjax/2.7.7|mathjax|' assets/base/mathjax.html.j2
 	#ln -rsf node_modules/mathjax/latest.js node_modules/mathjax/MathJax.js
+else
+localize:
+	@echo 'Localized node packages disabled'
+endif
 
 # --ServePostProcessor.ip='127.0.0.2'
 $(IPYNBPRES): ipynb%: ipynb%.ipynb
@@ -64,7 +71,7 @@ index.html: ipynb/index.ipynb
 	jupyter-nbconvert ipynb/index.ipynb --to html --output-dir $(PWD)
 
 talks/%.slides.html: ipynb/%.ipynb localize
-	jupyter-nbconvert $< --to slides --output-dir $(dir $@) --config=$(IPYNBCONFIG) --Application.log_level=10
+	jupyter-nbconvert $< --to slides --output-dir $(dir $@) --Application.log_level=10 --config=$(IPYNBCONFIG)
 	cp -f $(dir $<)$(IPYNBCSS) $(dir $@)$(IPYNBCSS)
 
 %.zip: talks/%.slides.html
