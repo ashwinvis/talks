@@ -1,7 +1,7 @@
 Talks by Ashwin
 ===============
 
-http://ashwinvis.github.io/talks
+http://fluid.quest/talks
 
 Notes
 -----

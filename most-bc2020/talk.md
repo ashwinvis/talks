@@ -6,7 +6,7 @@ class: center, middle
 
 <!-- <img src="./images/dp_eturb.svg" style="height: 5em;"/> -->
 
-### Slides: [ashwin.info.tm/talks](https://ashwin.info.tm/talks)
+### Slides: [fluid.quest/talks](https://fluid.quest/talks)
 
 <img src="./images/dp_su.gif" style="height: 3em;"/>
 <img src="./images/dp_kth.svg" style="height: 3em;"/>
