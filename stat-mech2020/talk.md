@@ -4,7 +4,7 @@ class: center, middle
 
 ## Ashwin Vishnu Mohanan
 
-<!-- ### Slides: [ashwinvis.github.io/talks](https://ashwinvis.github.io/talks) -->
+<!-- ### Slides: [fluid.quest/talks](https://fluid.quest/talks) -->
 
 <img src="./images/dp_kth.svg" style="height: 3em;"/>
 
@@ -264,7 +264,7 @@ class: center, middle, inverse
 ### Any questions?
 ![](./images/noun_questions_inv.svg)
 
-## slides will be uploaded: [ashwinvis.github.io/talks](https://ashwinvis.github.io/talks.html)
+## slides will be uploaded: [fluid.quest/talks](https://fluid.quest/talks.html)
 
 ---
 

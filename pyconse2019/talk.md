@@ -45,7 +45,7 @@ we are
 <img src="./images/dp_augier.jpg" style="height: 8em;"/>
 
 
-- **Ashwin Vishnu Mohanan ([ashwinvis.github.io](https://ashwinvis.github.io)**)
+- **Ashwin Vishnu Mohanan ([fluid.quest](https://fluid.quest)**)
   - Postdoctoral researcher, SU
   - Ph.D. in Engineering Mechanics, KTH
 -  Pierre Blanc-fatin
@@ -928,7 +928,7 @@ class:center,middle,inverse
 ### Any questions?
 ![](./images/noun_questions_inv.svg)
 
-## slides: [ashwinvis.github.io/pyconse2019](https://ashwinvis.github.io/pyconse2019.html)
+## slides: [fluid.quest/pyconse2019](https://fluid.quest/pyconse2019.html)
 
 <div align="left">
 

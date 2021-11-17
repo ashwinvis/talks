@@ -30,7 +30,7 @@ href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
 
 <img src="./images/dp_avmo.jpg" style="height: 8em;"/>
 
-- **Ashwin Vishnu Mohanan ([ashwinvis.github.io](https://ashwinvis.github.io)**)
+- **Ashwin Vishnu Mohanan ([fluid.quest](https://fluid.quest)**)
 
   - Postdoctoral researcher at MISU, SU (October 2019 - now)
 
