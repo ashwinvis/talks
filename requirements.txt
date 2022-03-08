@@ -30,8 +30,6 @@ flask==1.0.2
     # via cicero
 idna==2.8
     # via requests
-importlib-resources==5.4.0
-    # via jsonschema
 ipython-genutils==0.2.0
     # via nbformat
 itsdangerous==2.0.1
@@ -84,7 +82,7 @@ packaging==21.2
     # via bleach
 pandocfilters==1.5.0
     # via nbconvert
-pillow==8.4.0
+pillow==9.0.0
     # via
     #   matplotlib
     #   wordcloud
@@ -131,5 +129,3 @@ wordcloud==1.8.1
     # via
     #   -r requirements.in
     #   jupyter-wordcloud
-zipp==3.6.0
-    # via importlib-resources
