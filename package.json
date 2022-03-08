@@ -6,6 +6,6 @@
     "requirejs": "~2.3.6",
     "mathjax": "=3.0.5",
     "remark-slide": "~0.14.0",
-    "reveal.js": "~3.9.2"
+    "reveal.js": "~4.3.0"
   }
 }
