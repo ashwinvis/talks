@@ -82,7 +82,7 @@ packaging==21.2
     # via bleach
 pandocfilters==1.5.0
     # via nbconvert
-pillow==9.0.0
+pillow==9.0.1
     # via
     #   matplotlib
     #   wordcloud
