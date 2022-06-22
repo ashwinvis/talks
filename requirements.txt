@@ -73,7 +73,7 @@ nest-asyncio==1.5.1
     # via
     #   jupyter-client
     #   nbclient
-numpy==1.21.4
+numpy==1.22.0
     # via
     #   jupyter-wordcloud
     #   matplotlib
