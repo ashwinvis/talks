@@ -1,4 +1,4 @@
 wordcloud
-nbconvert==6.0.7
+nbconvert==6.5.1
 cicero==0.2.3
 -e "git+https://github.com/ashwinvis/jupyter-wordcloud#egg=jupyter-wordcloud"
